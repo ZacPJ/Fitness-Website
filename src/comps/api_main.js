@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+
 const fetchExcercise = async (setExcercise) =>{
     try{
         const request = await fetch(`https://wger.de/api/v2/exerciseinfo/`)
