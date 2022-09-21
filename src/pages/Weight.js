@@ -1,6 +1,7 @@
 import {React} from "react";
 import '../pages/Weight.css';
 function Weight (props){
+    let exercise = props.exercise
     return(
         <div>
             <div>
@@ -15,10 +16,14 @@ function Weight (props){
                 </div>
             </div>
             <div className= "dropdown">
-            
-                <button>excercises</button>
+                <button class = "buttonExercise">excercises</button>
                 <div className = "dropdown-content">
-                    <a>{props.exercise[0].name}</a>
+                    {exercise.map((exerciseVar,index)=>{
+                        return(
+                        <li key = {index} className="dropDownContent">{exerciseVar.name}---{exerciseVar.area}</li>
+                        )
+                    })
+                    }
                 </div>
             </div>
         </div>
