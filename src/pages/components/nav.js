@@ -1,4 +1,4 @@
-import react from 'react';
+// import react from 'react';
 import { Link } from "react-router-dom";
 
 
@@ -10,8 +10,8 @@ function Navbar(){
             <li><Link to="/Calorie"> Calorie </Link> </li>
             <li><Link to="/Userprofile"> Userprofile </Link> </li>
         </ul>
-    )
-}
+    );
+};
 
 
 export default Navbar;
