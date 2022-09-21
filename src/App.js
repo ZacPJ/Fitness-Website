@@ -11,20 +11,23 @@ import Calorie from './pages/Calorie';
 import Weight from './pages/Weight';
 
 
+
+
 function App() {
   const [storedExercise, setExercise] = useState([])
   useEffect(()=>{
     fetchExercise(setExercise)
   },[])
   console.log(storedExercise)
-  
+
+
   return (
 
     <div>
       <Nav />
       <Routes>
       <Route exact path="/" element={ <Home /> } />
-      <Route exact path="/Weight" element={ <Weight /> } />
+      <Route exact path="/Weight" element={<Weight exercise={storedExercise} />} />
       <Route exact path="/Calorie" element={ <Calorie /> } />
       <Route exact path="/Userprofile" element={ <Userprofile /> } />
       </Routes>
