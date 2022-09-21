@@ -9,7 +9,6 @@ function Navbar(){
             <li><Link to="/Weight"> Weight </Link> </li>
             <li><Link to="/Calorie"> Calorie </Link> </li>
             <li><Link to="/Userprofile"> Userprofile </Link> </li>
-            <li><Link to="/UdateAccount"> UpdateAccount </Link> </li>
         </ul>
     );
 };
