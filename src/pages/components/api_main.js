@@ -12,11 +12,13 @@ const fetchExcercise = async (setExcercise) =>{
             return {
                 name:excercise.name,
                 description:excercise.description,
+                test:"true",
             }
         })
+        setExcercise(NewVar)
     }catch(error){
         console.log(`Error connecting to API, ${error}`)
     }
+    
 }
-fetchExcercise()
 export{fetchExcercise}
