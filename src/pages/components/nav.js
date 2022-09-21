@@ -1,19 +1,17 @@
-function Navbar() {
+import react from 'react';
+import { Link } from "react-router-dom";
 
-    return (
 
-        <div id="nav">
-            <div id="logo">
-                <a>Home</a>
-            </div>
-            <div id="nav-center">
-                <a>Weight</a>
-                <a>Calorie Scores</a>
-            </div>
-            <div id="nav-right">
-                <a>User Profile</a>
-            </div>
-        </div>
+function Navbar(){
+    return(
+        <ul>
+            <li><Link to="/"> Home </Link> </li>
+            <li><Link to="/Weight"> Weight </Link> </li>
+            <li><Link to="/Calorie"> Calorie </Link> </li>
+            <li><Link to="/Userprofile"> Userprofile </Link> </li>
+        </ul>
     )
 }
+
+
 export default Navbar;
