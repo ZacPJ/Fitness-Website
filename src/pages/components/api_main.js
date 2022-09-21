@@ -33,11 +33,11 @@ const calorieCount = (weight,height,age,intensity,time,sex) =>{
     }
     switch(intensity){
         case "Low Intensity":
-            break
+            break;
         case "Medium Intensity":
-            break
+            break;
         default:
-            break
+            break;
             
     }
 }
