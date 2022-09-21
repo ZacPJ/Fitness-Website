@@ -73,6 +73,10 @@ const calorieCount = (weight,height,age,intensity,time,sex) =>{
     }
     
 }
+const fetchExerciseName = () =>{
+let exerciseNames = ""
+fetchExercise(exerciseNames)
+return exerciseNames
+}
 
-
-export{fetchExercise}
+export{fetchExercise, calorieCount,fetchExerciseName}
