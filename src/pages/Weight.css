@@ -4,6 +4,8 @@
     height: auto;
     list-style: none;
     flex-direction: row;
+    align-items: center;
+    
 }
 .innerWeightFlex{
     display:flex;
@@ -18,29 +20,16 @@
     width: fit-content;
 
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-    overflow: auto;
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-  }
-  .dropdown-content .dropDownContent {
-    display: block;
-    color: #000000;
-    padding: 5px;
-    text-decoration: none;
-  }
-  .dropdown-content .dropDownContent:hover {
-    color: #FFFFFF;
-    background-color: #00A4BD;
-  }
 .buttonExercise{
-    width: 250px;
+    width: fit-content;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 25px;
-    height: 50px;
+    height: fit-content;
     border-radius: 25px;
+    background-color: rgba(255, 251, 251, 0.6);
 }
