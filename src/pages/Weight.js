@@ -2,6 +2,15 @@ import {React} from "react";
 import '../pages/Weight.css';
 function Weight (props){
     let exercise = props.exercise
+    function submit(event){
+        event.preventDefault()
+        let chosenExercise = document.getElementById("exerciseChoose").value.slice(0,-1)
+        let timeExercised = document.getElementById("time").value
+        if (timeExercised == ""){
+            timeExercised = 1
+        }
+        console.log(chosenExercise,timeExercised)
+    }
     return(
         <div>
             <div>
@@ -23,23 +32,22 @@ function Weight (props){
                     <p>60</p>
                 </div>
             </div>
-            <div className = "innerWeightFlex">
+            <div className = "weightFlex">
                 <div className= "dropdown">
-                    <button class = "buttonExercise">Exercises</button>
-                    <div className = "dropdown-content">
+                    <select className = "buttonExercise" id = "exerciseChoose">
                         {exercise.map((exerciseVar,index)=>{
                             return(
-                            <li key = {index} className="dropDownContent">{exerciseVar.name}---{exerciseVar.area}</li>
+                            <option key = {index} className="dropDownContent" value={exerciseVar.name + index}>{exerciseVar.name}---{exerciseVar.area}</option>
                             )
                         })
                         }
-                    </div>
+                    </select>
                 </div>
                 <form>
-                    <label for="time">Time Exercised(hours)</label>
-                    <input type ="number" id = "time" name = "time"></input>
-                    <input type ="submit" value = "Submit"></input>
+                    <label htmlFor="time">Time Exercised (Hours) </label>
+                    <input min = "1" placeholder = "1" type ="number" id = "time" name = "time"></input>
                 </form>
+                <input onClick = {submit} type ="submit" value = "Submit" className = "buttonExercise"></input>
             </div>
         </div>
 
