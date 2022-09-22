@@ -13,7 +13,20 @@ function Userprofile (){
             <Link to="/UdateAccount"><button className="updatebutton" >Update Account</button></Link>
             <Routes><Route exact path="/UdateAccount" element={ <UpdateAccount /> } /></Routes>
             </div>
-            
+            <div class="card">
+        <div class="content">
+            <div class="front">
+                <h3 class="title">Name</h3>
+                <p class="subtitle">Personal info:)</p>
+            </div>
+
+            <div class="back">
+                <p class="description">
+                    Userprofile Info Here
+                </p>
+            </div>
+        </div>
+    </div>
             <div>
                 <button className="deletebutton" >Delete Account</button>
             </div>

@@ -1,20 +1,73 @@
-.heading{
+.heading {
     display: flex;
     justify-content: center;
 }
 
-/* .updatebutton{
+.updatebutton{
 
 }
 
 .deletebutton{
-    
-} */
+    position: absolute;
+    right:    0;
+    bottom:   0;
+}
 
 /* ####################### BUTTONS ^^ ########################## */
 
+/* From uiverse.io by @JoseIsra */
+.card {
+    /* width: 12rem; */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 7%;
+    height: 20em;
+}
 
+.content {
+    text-align: center;
+    position: relative;
+    transition: all 2.25s;
+    background-color: rgb(127, 204, 240);
+    padding: 5em;
+    transform-style: preserve-3d;
+}
 
+.card:hover .content {
+    transform: rotateY(0.5turn);
+}
 
+.front,
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 2em;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.title {
+    transform: translateZ(5rem);
+    font-size: 2rem;
+}
+
+.subtitle {
+    transform: translateZ(2rem);
+}
+
+.back {
+    transform: rotateY(0.5turn);
+    background-color: #009bff;
+}
+
+.description {
+    transform: translateZ(3rem);
+}
 
 /* ####################### PROFILE INFO CARD ^^ ######################################### */
