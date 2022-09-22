@@ -31,7 +31,8 @@
     font-size: 25px;
     height: fit-content;
     border-radius: 25px;
-    background-color: rgba(255, 251, 251, 0.6);
+    color:white;
+    background-color: #648ad4;
 }
 .chosenDescriptionFlex{
 height: auto;

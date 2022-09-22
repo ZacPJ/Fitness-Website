@@ -1,7 +1,7 @@
 import {React} from "react";
 import '../pages/Weight.css';
 function Weight (props){
-
+//ading this comment to try and push this correctly I will cry if this doesnt work
     let exercise = props.exercise
     let chosenDesc = props.exercise[0].description.replace("<p>","").replace("</p>","")
     function submit(event){
