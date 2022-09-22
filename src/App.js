@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Route, Routes } from "react-router-dom";
 // import styled from 'styled-components';
 import './App.css';
-import { fetchExcercise } from './pages/components/api_main';
+import { fetchExercise } from './pages/components/api_main';
 import Nav from './pages/components/nav';
 import Home from './pages/Home'
 import Userprofile from './pages/Userprofile';

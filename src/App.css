@@ -69,13 +69,6 @@ body {
   padding-left: 75px;
   outline: black solid;
 
-#nav-center ul a:hover,
-#nav-right ul a:hover {
-  transition: 0.5s;
-  background-color: rgba(255, 251, 251, 0.4);
-  border-radius: 12px;
-
-
 }
 
 /* -------------------------------------------------------------------- */
