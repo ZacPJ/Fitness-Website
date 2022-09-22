@@ -29,16 +29,20 @@ body {
 #logo {
   width: 424px;
   padding-left: 30px;
+  outline: 5px black solid;
 
 }
 
 #nav-center {
   width: 590px;
+  outline: 5px black solid;
+
 }
 
 #nav-right {
   width: 424px;
   padding-left: 75px;
+  outline: 5px black solid;
 }
 
 #nav-center ul a:hover,
