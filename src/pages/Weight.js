@@ -44,10 +44,10 @@ function Weight (props){
             </div>
             <div className = "weightFlex">
                 <div className= "dropdown">
-                    <select className = "buttonExercise" id = "exerciseChoose" >
+                    <select onClick = {exerciseDesc} className = "buttonExercise" id = "exerciseChoose" >
                         {exercise.map((exerciseVar,index)=>{
                             return(
-                            <option onClick = {exerciseDesc} key = {index} className="dropDownContent" value={exerciseVar.name + index}>{exerciseVar.name}---{exerciseVar.area}</option>
+                            <option key = {index} className="dropDownContent" value={exerciseVar.name + index}>{exerciseVar.name}---{exerciseVar.area}</option>
                             )
                         })
                         }
