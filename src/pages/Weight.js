@@ -1,15 +1,25 @@
 import {React} from "react";
 import '../pages/Weight.css';
 function Weight (props){
+
     let exercise = props.exercise
+    let chosenDesc = props.exercise[0].description.replace("<p>","").replace("</p>","")
     function submit(event){
         event.preventDefault()
         let chosenExercise = document.getElementById("exerciseChoose").value.slice(0,-1)
         let timeExercised = document.getElementById("time").value
-        if (timeExercised == ""){
+        if (timeExercised === ""){
             timeExercised = 1
         }
         console.log(chosenExercise,timeExercised)
+    }
+    function exerciseDesc(){
+        let chosenExercise = document.getElementById("exerciseChoose").value.slice(0,-1)
+        let filteredExercise = props.exercise.filter(filter => chosenExercise === filter.name)
+        chosenDesc = filteredExercise[0].description
+        chosenDesc = chosenDesc.replaceAll("<p>","").replaceAll("</p>","")
+        document.getElementById("chosenDescription").textContent = chosenDesc
+        console.log(chosenDesc)
     }
     return(
         <div>
@@ -34,10 +44,10 @@ function Weight (props){
             </div>
             <div className = "weightFlex">
                 <div className= "dropdown">
-                    <select className = "buttonExercise" id = "exerciseChoose">
+                    <select className = "buttonExercise" id = "exerciseChoose" >
                         {exercise.map((exerciseVar,index)=>{
                             return(
-                            <option key = {index} className="dropDownContent" value={exerciseVar.name + index}>{exerciseVar.name}---{exerciseVar.area}</option>
+                            <option onClick = {exerciseDesc} key = {index} className="dropDownContent" value={exerciseVar.name + index}>{exerciseVar.name}---{exerciseVar.area}</option>
                             )
                         })
                         }
@@ -48,6 +58,9 @@ function Weight (props){
                     <input min = "1" placeholder = "1" type ="number" id = "time" name = "time"></input>
                 </form>
                 <input onClick = {submit} type ="submit" value = "Submit" className = "buttonExercise"></input>
+            </div>
+            <div className = "chosenDescriptionFlex">
+                <label id="chosenDescription">{chosenDesc}</label>
             </div>
         </div>
 
