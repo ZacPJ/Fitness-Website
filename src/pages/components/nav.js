@@ -1,4 +1,4 @@
-import react from 'react';
+// import react from 'react';
 import { Link } from "react-router-dom";
 
 
@@ -24,6 +24,5 @@ function Navbar() {
         </div>
     )
 }
-
 
 export default Navbar;

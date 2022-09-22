@@ -20,7 +20,8 @@
 const calorieCount = (weight,height,age,intensity,time,sex) =>{
     //This will be a basic way to count the number of calories burned during the different intense excercises
     let BMR = 0
-    switch(sex.lower()){
+    let intensityCalc = 0
+    switch(sex){
         case "male":
             BMR = 66+(6.2*weight)+(12.7*height)-(6.76*age)
             break
@@ -33,17 +34,21 @@ const calorieCount = (weight,height,age,intensity,time,sex) =>{
     }
     switch(intensity){
         case "Low Intensity":
+            intensityCalc = 1.55
             break;
         case "Medium Intensity":
+            intensityCalc = 1.725
             break;
         default:
+            intensityCalc = 1.9
             break;
-            
     }
+    let dailyCal = ((BMR*intensityCalc)/24)*(time*4)
+    return dailyCal
 }
 
 
-    const fetchExcercise = async (setExcercise) =>{
+    const fetchExercise = async (setExercise) =>{
     try{
         const request = await fetch(`https://wger.de/api/v2/exerciseinfo/`)
         if(!request.ok){
@@ -51,19 +56,27 @@ const calorieCount = (weight,height,age,intensity,time,sex) =>{
         }
         let response = await request.json()
         response = response.results.filter(langvar => langvar.language.full_name === "English")
-        response.push({name:"Pushups",description:"A simple shoulder workout to build strength"})
+        response.push({name:"Pushups",description:"A simple shoulder workout to build strength",category:{name:"Shoulders"}})
 
-        const NewVar = response.map((excercise)=>{
+        const NewVar = response.map((exercise)=>{
             return {
-                name:excercise.name,
-                description:excercise.description,
-                intensity: intensitySet()
+                name:exercise.name,
+                description:exercise.description,
+                intensity: intensitySet(),
+                area: exercise.category.name
             }
         })
-        setExcercise(NewVar)
+        setExercise(NewVar)
+        //console.log(calorieCount(170,72,37,"High Intensity",6,"male"))
     }catch(error){
         console.log(`Error connecting to API, ${error}`)
     }
     
 }
-export{fetchExcercise}
+const fetchExerciseName = () =>{
+let exerciseNames = ""
+fetchExercise(exerciseNames)
+return exerciseNames
+}
+
+export{fetchExercise, calorieCount,fetchExerciseName}

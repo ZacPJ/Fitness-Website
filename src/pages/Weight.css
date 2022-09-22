@@ -1,0 +1,40 @@
+.weightFlex{
+    display:flex;
+    width: 100%;
+    height: auto;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.innerWeightFlex{
+    display:flex;
+    width: 50%;
+    height: auto;
+    justify-content: center;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+
+}
+.buttonExercise{
+    width: fit-content;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    height: fit-content;
+    border-radius: 25px;
+    background-color: rgba(255, 251, 251, 0.6);
+}
+.chosenDescriptionFlex{
+height: auto;
+width: 450px;
+padding: 10px;
+}
