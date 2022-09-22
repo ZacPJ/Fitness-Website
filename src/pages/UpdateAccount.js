@@ -4,7 +4,7 @@ import '../pages/UpdateAccount.css';
 function UpdateAccount (){
     return(
         <div>
-            <h1>UpdateAccount page</h1>
+            <h1>Update Account</h1>
         </div>
     )
 }
