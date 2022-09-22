@@ -1,49 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&family=Raleway:wght@100;200;300;400;700&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+@font-face {
+  font-family: 'tesla';
+  src: url("./tesla-font/TESLA.ttf") format("truetype");
+}
+
 body {
   background-color: #DEE6E9;
   cursor: default;
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 200vh;
+  font-family: 'Raleway', sans-serif;
 }
 
+.nav-link {
+  text-decoration: none;
+  padding: 7px 16px;
+  transition: 0.5s;
+  margin: 0 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #FFF;
+  font-family: 'Exo 2', sans-serif;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 251, 251, 0.1);
+  transition: 0.5s;
+}
 
 #nav {
   display: flex;
   /* justify-content: space-between; */
   align-items: center;
-  position: fixed;
   z-index: 10;
   width: 100%;
   height: 56px;
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0 0 10px 5px #000;
 }
 
-#nav ul a {
-  padding: 7px 16px;
-  transition: 0.5s;
+#nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
 }
 
-#logo {
+#nav-left {
   width: 424px;
-  padding-left: 30px;
-  outline: 5px black solid;
+  padding-left: 100px;
+  outline: black solid;
 
 }
 
 #nav-center {
   width: 590px;
-  outline: 5px black solid;
-
+  outline: black solid;
 }
 
 #nav-right {
   width: 424px;
   padding-left: 75px;
-  outline: 5px black solid;
-}
+  outline: black solid;
 
 #nav-center ul a:hover,
 #nav-right ul a:hover {
@@ -51,14 +75,24 @@ body {
   background-color: rgba(255, 251, 251, 0.4);
   border-radius: 12px;
 
+
 }
 
 /* -------------------------------------------------------------------- */
 
 #nav {
-  outline: 5px black solid;
+  outline: black solid;
 }
 
-.buttontwo{
+.buttontwo {
   color: black;
+}
+
+.title {}
+
+.tesla-font {
+  font-family: 'tesla';
+  font-size: 33px;
+  text-decoration: none;
+  color: #FFF;
 }

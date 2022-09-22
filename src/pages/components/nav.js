@@ -2,16 +2,27 @@
 import { Link } from "react-router-dom";
 
 
-function Navbar(){
-    return(
-        <ul>
-            <li><Link to="/"> Home </Link> </li>
-            <li><Link to="/Weight"> Weight </Link> </li>
-            <li><Link to="/Calorie"> Calorie </Link> </li>
-            <li><Link to="/Userprofile"> Userprofile </Link> </li>
-        </ul>
-    );
-};
-
+function Navbar() {
+    return (
+        <div id="nav">
+            <div id="nav-left">
+                <ul>
+                    <Link className="tesla-font" to="/">MI40</Link>
+                </ul>
+            </div>
+            <div id="nav-center">
+                <ul>
+                    <Link className="nav-link" to="/Weight">Weight</Link>
+                    <Link className="nav-link" to="/Calorie">Calorie</Link>
+                </ul>
+            </div>
+            <div id="nav-right">
+                <ul>
+                    <Link className="nav-link" to="/Userprofile">User Profile</Link>
+                </ul>
+            </div>
+        </div>
+    )
+}
 
 export default Navbar;
