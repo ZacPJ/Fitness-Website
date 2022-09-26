@@ -10,6 +10,7 @@ import Userprofile from './pages/Userprofile';
 import Calorie from './pages/Calorie';
 import Weight from './pages/Weight';
 import UpdateAccount from './pages/UpdateAccount';
+import SignUp from './pages/SignUp';
 
 
 
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/Calorie" element={ <Calorie /> } />
       <Route exact path="/Userprofile" element={ <Userprofile /> } />
       <Route exact path="/UdateAccount" element={ <UpdateAccount /> } />
+      <Route exact path="/SignUp" element={ <SignUp /> } />
       </Routes>
     </div>
   )

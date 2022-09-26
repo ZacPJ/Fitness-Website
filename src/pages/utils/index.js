@@ -23,6 +23,7 @@ export const login = async(email,password,setter) =>{
     }
 }
 
+
 export const update = async(email, name, desiredWeight, sex, height, age) =>{
     try
     {
