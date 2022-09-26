@@ -1,16 +1,13 @@
-export const writeCookie = (key, value, days) => {
-    var date = new Date();
+export const writeCookie = (key,value,days) => {
 
-    // Default at 365 days.
+    let date = new Date();
     days = days || 365;
+    date.setTime( + date + (days*86400000) )
 
-    // Get unix milliseconds at current time plus number of days
-    date.setTime(+ date + (days * 86400000)); //24 * 60 * 60 * 1000
+    let cookie = document.cookie = key + "=" + value + ";expires=" + date.toGMTString() + ";path=/";
 
-    let cookie = document.cookie = key + "=" + value + "; expires=" + date.toGMTString() + "; path=/";
-
-    return cookie
-} 
+    return cookie;
+}
 
 export const getCookie = (cname) => {
     let name = cname + "=";

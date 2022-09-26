@@ -28,11 +28,12 @@ body {
   color: #FFF;
   font-family: 'Exo 2', sans-serif;
   text-transform: uppercase;
+  border-radius: 12px;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 251, 251, 0.1);
   transition: 0.5s;
+  background-color: #607d8b  ;
 }
 
 #nav {
@@ -55,26 +56,19 @@ body {
 #nav-left {
   width: 424px;
   padding-left: 100px;
-  outline: black solid;
-
 }
 
 #nav-center {
   width: 590px;
-  outline: black solid;
 }
 
 #nav-right {
   width: 424px;
   padding-left: 75px;
-  outline: black solid;
 }
+
 
 /* -------------------------------------------------------------------- */
-
-#nav {
-  outline: black solid;
-}
 
 .buttontwo {
   color: black;
@@ -87,4 +81,15 @@ body {
   font-size: 33px;
   text-decoration: none;
   color: #FFF;
+  transition: all .2s ease-in-out;
+  
+}
+
+.tesla-font:hover {
+  transform: scale(1.2);
+  text-shadow:0px 0px 30px #fdec6e  ;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
