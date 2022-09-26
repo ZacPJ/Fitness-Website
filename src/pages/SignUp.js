@@ -3,6 +3,9 @@ import {useState} from "react";
 import SignUp from "./components/SignUp.js"
 import '../pages/SignUp.css';
 
+import { Route, Routes, Link } from "react-router-dom";
+import Home from './Home';
+
 function SignUpFunc()
 {
 
@@ -12,7 +15,19 @@ function SignUpFunc()
         <div>
             <h1>Sign Up</h1>
 
-            <SignUp setter = {setUser} />
+            
+
+            {!user ? 
+            <div>
+                <SignUp setter = {setUser} />
+            </div>: 
+            <div>
+                account created, return to <Link to="/">home page</Link> to log in
+
+                
+                <Routes><Route exact path="/Home" element={<Home />} /></Routes>
+            </div>
+            }
         </div>
     )
 }
