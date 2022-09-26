@@ -67,11 +67,26 @@ const SignUp = ({setter}) =>{
                 </label>
                 <br></br>
 
+
+
+                <label for="sex">sex</label>
+
+                <select name="sex" onChange={(event) => setSex(event.target.value)}>
+                    <option hidden disabled selected value></option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="other">other</option>
+                </select> 
+
+                {/*
                 <label>
                     sex
                     <input onChange={(event) => setSex(event.target.value)} />
                 </label>
                 <br></br>
+                */}
+
+
             </div>
 
             <button type = "submit"> sign up </button>
