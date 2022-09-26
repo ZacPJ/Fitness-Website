@@ -1,5 +1,6 @@
 import {React} from "react";
 import '../pages/Weight.css';
+let listArray = []
 function Weight (props){
 //ading this comment to try and push this correctly I will cry if this doesnt work
     let exercise = props.exercise
@@ -11,7 +12,13 @@ function Weight (props){
         if (timeExercised === ""){
             timeExercised = 1
         }
-        console.log(chosenExercise,timeExercised)
+        let chosenObj = {
+            name:chosenExercise,
+            time:timeExercised,
+            caloriesBurned: "12"
+        }
+        listArray.push(chosenObj)
+        console.log(chosenExercise,timeExercised,chosenObj,listArray)
     }
     function exerciseDesc(){
         let chosenExercise = document.getElementById("exerciseChoose").value.slice(0,-1)
