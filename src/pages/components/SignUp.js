@@ -77,14 +77,8 @@ const SignUp = ({setter}) =>{
                     <option value="female">female</option>
                     <option value="other">other</option>
                 </select> 
-
-                {/*
-                <label>
-                    sex
-                    <input onChange={(event) => setSex(event.target.value)} />
-                </label>
                 <br></br>
-                */}
+
 
 
             </div>

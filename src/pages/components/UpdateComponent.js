@@ -43,10 +43,15 @@ const UpdateUserInfo = ({setter}) =>{
                 </label>
                 <br></br>
 
-                <label>
-                    Sex
-                    <input onChange={(event) => setSex(event.target.value)} />
-                </label>
+
+                <label for="sex">sex</label>
+
+                <select name="sex" onChange={(event) => setSex(event.target.value)}>
+                    <option hidden disabled selected value></option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="other">other</option>
+                </select> 
                 <br></br>
 
                 <label>
