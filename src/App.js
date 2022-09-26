@@ -15,13 +15,19 @@ import SignUp from './pages/SignUp';
 
 
 
+
 function App() {
 
   const [storedExercise, setExercise] = useState([])
+
   useEffect(()=>{
     fetchExercise(setExercise)
+
   },[])
   console.log(storedExercise)
+
+
+
   
   return (
 
