@@ -1,6 +1,3 @@
-
-
-
 export const writeCookie = (key,value,days) => {
 
     let date = new Date();
@@ -11,7 +8,6 @@ export const writeCookie = (key,value,days) => {
 
     return cookie;
 }
-
 
 export const getCookie = (cname) => {
     let name = cname + "=";

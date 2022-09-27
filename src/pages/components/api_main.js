@@ -5,12 +5,15 @@
         switch(count){
         case 1:
             intensity = "Low Intensity"
+
             break
         case 2:
             intensity = "Medium Intensity"
+   
             break
         default:
             intensity = "High Intensity"
+ 
             count = 0
             break
         }
@@ -67,7 +70,7 @@ const calorieCount = (weight,height,age,intensity,time,sex) =>{
             }
         })
         setExercise(NewVar)
-        //console.log(calorieCount(170,72,37,"High Intensity",6,"male"))
+
     }catch(error){
         console.log(`Error connecting to API, ${error}`)
     }
@@ -79,4 +82,4 @@ fetchExercise(exerciseNames)
 return exerciseNames
 }
 
-export{fetchExercise, calorieCount,fetchExerciseName}
+export{fetchExercise, calorieCount,fetchExerciseName,intensitySet}
