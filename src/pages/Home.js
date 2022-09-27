@@ -10,13 +10,11 @@ import { findUser } from "./utils/index.js";
 
 function Home(props) {
 
-    const [user, setUser] = useState();
+    const [userEmail, setUserEmail] = useState();
     useEffect(() => {
         props.setIsNav(false)
     }, [])
     
-    const [userEmail, setUserEmail]=useState();
-
     useEffect(()=>{
         let cookie = getCookie("jwt_token");
         console.log(cookie);
