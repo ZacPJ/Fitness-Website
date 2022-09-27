@@ -5,8 +5,7 @@ import UpdateUserInfo from "./components/UpdateComponent";
 function UpdateAccount (props){
     return(
         <div>
-            <h1>Update Account</h1>
-
+            <h1 className="title">Update Account</h1>
             <UpdateUserInfo userInfo = {props.usersInfo}/>
         </div>
     )

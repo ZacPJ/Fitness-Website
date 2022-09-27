@@ -1,50 +1,31 @@
 import React from "react";
-import {useState, useEffect} from "react";
+import { useState } from "react";
 import Login from "./components/Login.js"
 import { Route, Routes, Link } from "react-router-dom";
 import SignUp from './SignUp';
 
-import { getCookie } from "./common/index.js";
-import { findUser } from "./utils/index.js";
+function Home() {
 
-function Home (){
+    const [user, setUser] = useState();
 
-    const [userEmail, setUserEmail]=useState();
-
-
-    useEffect(()=>{
-        let cookie = getCookie("jwt_token");
-        console.log(cookie);
-        if (cookie !== false)
-        {
-            loginWithToken(cookie);
-        }
-
-      },[])
-
-    async function loginWithToken(cookie)
-    {
-        const cookieUser = await findUser(cookie);
-        setUserEmail(cookieUser.email);
-        console.log("signed in with cookies");
-    }
-
-    return(
+    return (
         <div>
-            <h1>Home page</h1>
 
-            {userEmail ? 
-            <div>
-                successfully signed in with the email {userEmail}, this message can be removed later
-            </div>: 
-            <div>
-                <Login setter = {setUserEmail} />
+            <h1 className="title">Home page</h1>
 
-                <Link to="/SignUp">Create an account</Link>
-                <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
-            </div>
+            {!user ?
+                <div>
+                    <Login setter={setUser} />
+
+                    <Link to="/SignUp">Create an account</Link>
+                    <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
+
+                </div> :
+                <div>
+                    successfully signed in with the email {user}, this message can be removed later
+                </div>
             }
-            
+
 
         </div>
     )
