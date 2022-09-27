@@ -28,7 +28,7 @@ export const login = async(email,password,setter) =>{
 }
 
 
-export const update = async(email, name, desiredWeight, sex, height, age) =>{
+export const update = async(email, name, desiredWeight, sex, height, age, calories) =>{
     try
     {
         console.log("updatecalled")
@@ -43,6 +43,7 @@ export const update = async(email, name, desiredWeight, sex, height, age) =>{
                 "sex":sex,
                 "height":parseInt(height),
                 "age":parseInt(age),
+                "calories":parseInt(calories),
 
             })
         })
@@ -103,6 +104,28 @@ export const findUser = async (token) =>{
         console.log(data);
         console.log(data.username);
         return data.username;
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+}
+export const findUserInfo = async (token) =>{
+    try
+    {
+        const response = await fetch("http://localhost:5000/user/findUserInfo",{
+            method: "GET",
+            headers:
+            {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+        let data = await response.json();
+        console.log(`UserInfoData`)
+        console.log(data)
+        return data
 
     }
     catch(error)
