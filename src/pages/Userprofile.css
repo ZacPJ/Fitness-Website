@@ -54,6 +54,7 @@
 
 .subtitle {
     transform: translateZ(2rem);
+    text-align: center;
 }
 
 .back {

@@ -133,3 +133,29 @@ export const findUserInfo = async (token) =>{
         console.log(error);
     }
 }
+
+export const removeUser = async(email,password) =>{
+    try
+    {
+        console.log("deletecalled")
+        const response = await fetch("http://localhost:5000/user/remove",{
+            method: "POST",
+            headers:
+            {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "email":email,
+                "password":password,
+            })
+        })
+
+        const data = await response.json();
+        console.log(data)
+        console.log("user deleted")
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+}
