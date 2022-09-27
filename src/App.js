@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 // import styled from 'styled-components';
 import './App.css';
 import { fetchExercise } from './pages/components/api_main';
-import Nav from './pages/components/nav';
+import Navbar from './pages/components/nav';
 import Home from './pages/Home'
 import Userprofile from './pages/Userprofile';
 import Calorie from './pages/Calorie';
@@ -18,23 +18,27 @@ import SignUp from './pages/SignUp';
 function App() {
 
   const [storedExercise, setExercise] = useState([])
-  useEffect(()=>{
+  useEffect(() => {
     fetchExercise(setExercise)
-  },[])
+  }, [])
   console.log(storedExercise)
-  
+
   return (
 
     <div>
-      <Nav />
-      <Routes>
-      <Route exact path="/" element={ <Home /> } />
-      <Route exact path="/Weight" element={<Weight exercise={storedExercise} />} />
-      <Route exact path="/Calorie" element={ <Calorie /> } />
-      <Route exact path="/Userprofile" element={ <Userprofile /> } />
-      <Route exact path="/UdateAccount" element={ <UpdateAccount /> } />
-      <Route exact path="/SignUp" element={ <SignUp /> } />
-      </Routes>
+      <Navbar />
+      <div className="wrapper" style={{ border: "solid black" }}>
+
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/Weight" element={<Weight exercise={storedExercise} />} />
+          <Route exact path="/Calorie" element={<Calorie />} />
+          <Route exact path="/Userprofile" element={<Userprofile />} />
+          <Route exact path="/UdateAccount" element={<UpdateAccount />} />
+          <Route exact path="/SignUp" element={<SignUp />} />
+        </Routes>
+
+      </div>
     </div>
   )
 }

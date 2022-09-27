@@ -4,7 +4,7 @@ import '../pages/Calorie.css';
 function Calorie (){
     return(
         <div>
-            <h1>Calorie page</h1>
+            <h1 className="title">Calorie page</h1>
         </div>
     )
 }

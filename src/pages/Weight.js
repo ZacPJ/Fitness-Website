@@ -1,5 +1,9 @@
 import {React} from "react";
 import '../pages/Weight.css';
+import Title from "./components/title";
+// import React from 'react';
+
+
 function Weight (props){
 //ading this comment to try and push this correctly I will cry if this doesnt work
     let exercise = props.exercise
@@ -23,9 +27,7 @@ function Weight (props){
     }
     return(
         <div>
-            <div>
-            <h1>Weight page</h1>
-            </div>
+            <Title title="Weight Page" />
             <div className = "weightFlex">
                 <div className = "innerWeightFlex">
                     <p>Current Weight</p>

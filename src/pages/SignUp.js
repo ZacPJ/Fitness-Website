@@ -2,6 +2,8 @@ import React from "react";
 import {useState} from "react";
 import SignUp from "./components/SignUp.js"
 import '../pages/SignUp.css';
+import Title from '../pages/components/title';
+
 
 import { Route, Routes, Link } from "react-router-dom";
 import Home from './Home';
