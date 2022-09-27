@@ -11,6 +11,8 @@ import Calorie from './pages/Calorie';
 import Weight from './pages/Weight';
 import UpdateAccount from './pages/UpdateAccount';
 import SignUp from './pages/SignUp';
+import { findUserInfo } from './pages/utils'
+import { getCookie } from './pages/common/index'
 
 
 
@@ -40,7 +42,7 @@ function App() {
 
       </div>
     </div>
-  )
+      )
 }
 
 export default App;

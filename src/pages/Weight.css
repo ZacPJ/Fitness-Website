@@ -5,13 +5,18 @@
     list-style: none;
     flex-direction: row;
     align-items: center;
+    min-height: 10px;
+    background-color: bisque;
+    justify-content: space-around;
     
 }
 .innerWeightFlex{
     display:flex;
     width: 50%;
     height: auto;
-    justify-content: center;
+    justify-content: space-around;
+    min-height: 10px;
+    background-color: pink;
 }
 
 .dropdown {
