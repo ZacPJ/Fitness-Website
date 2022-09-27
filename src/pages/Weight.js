@@ -1,25 +1,17 @@
 
 import {React, useState,useEffect} from "react";
 import '../pages/Weight.css';
-<<<<<<< HEAD
-import Title from "./components/title";
-// import React from 'react';
-
-
-=======
 import {calorieCount} from "./components/api_main"
 import {update} from "./utils";
 let exercise = []
 let chosenDesc = []
 let listArray = []
 let usersInfo = []
-async function setVars(props) {
-    exercise = await props.exercise
-    usersInfo = await props.usersInfo
-    chosenDesc = await props.exercise[0].description.replace("<p>","").replace("</p>","")
-    return props
+async function setVars(propsInner) {
+    exercise = await propsInner.exercise
+    usersInfo = await propsInner.usersInfo
+    chosenDesc = await propsInner.exercise[0].description.replace("<p>","").replace("</p>","")
 }
->>>>>>> a7c089280ce5f6c9ad41c5ebc5e9206eca19a7e1
 function Weight (props){
     const [listExercise, setExercise] = useState([])
     useEffect(()=>{
@@ -27,7 +19,7 @@ function Weight (props){
       },[listExercise])
     console.log(`Weight name ${props.usersInfo.name}`)
     setVars(props) 
-    function Submit(event){
+    async function Submit(event){
         //event.preventDefault()
         let chosenExercise = document.getElementById("exerciseChoose").value.slice(0,-1)
         let timeExercised = document.getElementById("time").value
@@ -46,6 +38,7 @@ function Weight (props){
         setExercise(...listArray,event)
         console.log(chosenExercise,timeExercised,chosenObj,listArray)
         updateCalories(chosenObj.caloriesBurned)
+        await props.pullInfo(usersInfo)
 
         
         
@@ -59,53 +52,11 @@ function Weight (props){
         console.log(chosenDesc)
         setExercise(listArray)
     }
-    function updateCalories (calories){
+    async function updateCalories (calories){
         calories = Math.round(calories)
-        update(usersInfo.email,usersInfo.name,usersInfo.desiredWeight,usersInfo.sex,usersInfo.height,usersInfo.age,calories)
+        usersInfo.calories = calories+usersInfo.calories
+        await update(usersInfo.email,usersInfo.name,usersInfo.desiredWeight,usersInfo.sex,usersInfo.height,usersInfo.age,(usersInfo.calories))
     }
-<<<<<<< HEAD
-    return(
-        <div>
-            <Title title="Weight Page" />
-            <div className = "weightFlex">
-                <div className = "innerWeightFlex">
-                    <p>Current Weight</p>
-                </div>
-                <div className = "innerWeightFlex">
-                    <p>Target Weight</p>
-                </div>
-            </div>
-            <div className = "weightFlex">
-                <div className = "innerWeightFlex">
-                    <p>60</p>
-                </div>
-                <div className = "innerWeightFlex">
-                    <p>60</p>
-                </div>
-            </div>
-            <div className = "weightFlex">
-                <div className= "dropdown">
-                    <select className = "buttonExercise" id = "exerciseChoose" >
-                        {exercise.map((exerciseVar,index)=>{
-                            return(
-                            <option onClick = {exerciseDesc} key = {index} className="dropDownContent" value={exerciseVar.name + index}>{exerciseVar.name}---{exerciseVar.area}</option>
-                            )
-                        })
-                        }
-                    </select>
-                </div>
-                <form>
-                    <label htmlFor="time">Time Exercised (Hours) </label>
-                    <input min = "1" placeholder = "1" type ="number" id = "time" name = "time"></input>
-                </form>
-                <input onClick = {submit} type ="submit" value = "Submit" className = "buttonExercise"></input>
-            </div>
-            <div className = "chosenDescriptionFlex">
-                <label id="chosenDescription">{chosenDesc}</label>
-            </div>
-        </div>
-=======
->>>>>>> a7c089280ce5f6c9ad41c5ebc5e9206eca19a7e1
 
 
         return(
