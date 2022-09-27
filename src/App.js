@@ -61,6 +61,7 @@ function App() {
           <Route exact path="/SignUp" element={<SignUp />} />
         </Routes>
       </div>
+
     </div>
   )
 }
