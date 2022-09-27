@@ -10,13 +10,11 @@ import { findUser } from "./utils/index.js";
 
 function Home(props) {
 
-    const [user, setUser] = useState();
+    const [userEmail, setUserEmail] = useState();
     useEffect(() => {
         props.setIsNav(false)
     }, [])
     
-    const [userEmail, setUserEmail]=useState();
-
     useEffect(()=>{
         let cookie = getCookie("jwt_token");
         console.log(cookie);
@@ -36,7 +34,6 @@ function Home(props) {
 
     return (
 
-        <div>
 
             <div className="wrapper">
 
@@ -50,9 +47,9 @@ function Home(props) {
 
                 <h1 className="title">Home page</h1>
                 
-                {!user ?
+                {!userEmail ?
                     <div className="form">
-                        <Login setter={setUser} />
+                        <Login setter={setUserEmail} />
 
                         <Link to="/SignUp">Create an account</Link>
                         <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
@@ -60,16 +57,10 @@ function Home(props) {
                     </div>
                     :
                     <div>
-                        successfully signed in with the email {user}, this message can be removed later
+                        successfully signed in with the email {userEmail}, this message can be removed later
                     </div>
                 }
-            </div>
-
-                </div> :
-                <div>
-                    successfully signed in with the email {userEmail}, this message can be removed later
-                </div>
-            }
+            
 
 
         </div>
