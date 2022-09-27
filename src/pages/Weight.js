@@ -7,11 +7,10 @@ let exercise = []
 let chosenDesc = []
 let listArray = []
 let usersInfo = []
-async function setVars(props) {
-    exercise = await props.exercise
-    usersInfo = await props.usersInfo
-    chosenDesc = await props.exercise[0].description.replace("<p>","").replace("</p>","")
-    return props
+async function setVars(propsInner) {
+    exercise = await propsInner.exercise
+    usersInfo = await propsInner.usersInfo
+    chosenDesc = await propsInner.exercise[0].description.replace("<p>","").replace("</p>","")
 }
 function Weight (props){
     const [listExercise, setExercise] = useState([])
@@ -20,7 +19,7 @@ function Weight (props){
       },[listExercise])
     console.log(`Weight name ${props.usersInfo.name}`)
     setVars(props) 
-    function Submit(event){
+    async function Submit(event){
         //event.preventDefault()
         let chosenExercise = document.getElementById("exerciseChoose").value.slice(0,-1)
         let timeExercised = document.getElementById("time").value
@@ -39,6 +38,7 @@ function Weight (props){
         setExercise(...listArray,event)
         console.log(chosenExercise,timeExercised,chosenObj,listArray)
         updateCalories(chosenObj.caloriesBurned)
+        await props.pullInfo(usersInfo)
 
         
         
@@ -52,9 +52,10 @@ function Weight (props){
         console.log(chosenDesc)
         setExercise(listArray)
     }
-    function updateCalories (calories){
+    async function updateCalories (calories){
         calories = Math.round(calories)
-        update(usersInfo.email,usersInfo.name,usersInfo.desiredWeight,usersInfo.sex,usersInfo.height,usersInfo.age,calories)
+        usersInfo.calories = calories+usersInfo.calories
+        await update(usersInfo.email,usersInfo.name,usersInfo.desiredWeight,usersInfo.sex,usersInfo.height,usersInfo.age,(usersInfo.calories))
     }
 
 
