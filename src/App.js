@@ -10,55 +10,58 @@ import Calorie from './pages/Calorie';
 import Weight from './pages/Weight';
 import UpdateAccount from './pages/UpdateAccount';
 import SignUp from './pages/SignUp';
-import {findUserInfo} from './pages/utils'
-import {getCookie} from './pages/common/index'
+import { findUserInfo } from './pages/utils'
+import { getCookie } from './pages/common/index'
+
 
 
 
 function App() {
 
-const [storedExercise, setExercise] = useState([])
-const [userInfo, setUserInfo] = useState([])
-async function pull_userInfo(data){
-  await setUserInfo(data)
-  console.log(`This is data sent fromt the child`)
-  console.log(data)
-}
-useEffect(()=>{
-  let cookie = getCookie("jwt_token");
-      console.log(cookie);
-      if (cookie !== false)
-      {
-          loginWithToken(cookie);
-      }
-  fetchExercise(setExercise)
-  findUserInfo(getCookie("jwt_token"),setUserInfo)
-},[])
-  async function loginWithToken(cookie)
-    {
-        const cookieUser = await findUserInfo(cookie);
-        setUserInfo(cookieUser);
-        console.log("signed in with cookies on app.js");
+  const [storedExercise, setExercise] = useState([])
+  const [userInfo, setUserInfo] = useState([])
+  const [isNav, setIsNav] = useState(false)
+  async function pull_userInfo(data) {
+    await setUserInfo(data)
+    console.log(`This is data sent fromt the child`)
+    console.log(data)
+  }
+  useEffect(() => {
+    let cookie = getCookie("jwt_token");
+    console.log(cookie);
+    if (cookie !== false) {
+      loginWithToken(cookie);
     }
+    fetchExercise(setExercise)
+    findUserInfo(getCookie("jwt_token"), setUserInfo)
+  }, [])
+  async function loginWithToken(cookie) {
+    const cookieUser = await findUserInfo(cookie);
+    setUserInfo(cookieUser);
+    console.log("signed in with cookies on app.js");
+  }
   console.log(storedExercise)
   console.log(`User test ${userInfo.name}`)
 
 
 
 
-  
+
   return (
 
     <div>
-      <Nav />
-      <Routes>
-      <Route exact path="/" element={ <Home /> } />
-      <Route exact path="/Weight" element={<Weight exercise={storedExercise} usersInfo = {userInfo} pullInfo = {pull_userInfo} />} />
-      <Route exact path="/Calorie" element={ <Calorie usersInfo = {userInfo} /> } />
-      <Route exact path="/Userprofile" element={ <Userprofile /> } />
-      <Route exact path="/UdateAccount" element={ <UpdateAccount usersInfo = {userInfo}/> } />
-      <Route exact path="/SignUp" element={ <SignUp /> } />
-      </Routes>
+      {isNav ? <Nav /> : null}
+      <div className="wrapper">
+        <Routes>
+          <Route exact path="/" element={<Home setIsNav = {setIsNav} isNav = {isNav} />} />
+          <Route exact path="/Weight" element={<Weight isNav = {isNav} setIsNav = {setIsNav} exercise={storedExercise} usersInfo={userInfo} pullInfo={pull_userInfo} />} />
+          <Route exact path="/Calorie" element={<Calorie usersInfo={userInfo} />} />
+          <Route exact path="/Userprofile" element={<Userprofile usersInfo = {userInfo}/>} />
+          <Route exact path="/UdateAccount" element={<UpdateAccount usersInfo={userInfo} />} />
+          <Route exact path="/SignUp" element={<SignUp />} />
+        </Routes>
+      </div>
+
     </div>
   )
 }
