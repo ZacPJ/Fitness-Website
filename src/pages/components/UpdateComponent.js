@@ -2,9 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { update } from "../utils";
 
+let usersInfo = []
+async function setVars(props) {
+    usersInfo = await props.userInfo
+    return props
+}
 
-const UpdateUserInfo = ({setter}) =>{
-
+const UpdateUserInfo = (props) =>{
+    setVars(props)
     const [email, setEmail] = useState();
     const [name, setName] = useState();
     const [desiredWeight, setDesiredWieght] = useState();
@@ -17,7 +22,7 @@ const UpdateUserInfo = ({setter}) =>{
     async function submitHandler(event)
     {
         event.preventDefault();
-        await update(email, name, desiredWeight, sex, height, age);
+        await update(email, name, desiredWeight, sex, height, age,usersInfo.calories);
     }
 
     return(

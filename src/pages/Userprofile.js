@@ -14,7 +14,7 @@ function Userprofile(props) {
     setVars(props)
     return (
         <div>
-            <h1 className="heading">Userprofile page</h1>
+            <h1 className="title">Userprofile page</h1>
 
             <div>
                 <Link to="/UdateAccount"><button className="updatebutton" >Update Account</button></Link>

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react'
 import { Route, Routes } from "react-router-dom";
 // import styled from 'styled-components';
@@ -21,6 +20,11 @@ function App() {
 
 const [storedExercise, setExercise] = useState([])
 const [userInfo, setUserInfo] = useState([])
+async function pull_userInfo(data){
+  await setUserInfo(data)
+  console.log(`This is data sent fromt the child`)
+  console.log(data)
+}
 useEffect(()=>{
   let cookie = getCookie("jwt_token");
       console.log(cookie);
@@ -50,10 +54,10 @@ useEffect(()=>{
       <Nav />
       <Routes>
       <Route exact path="/" element={ <Home /> } />
-      <Route exact path="/Weight" element={<Weight exercise={storedExercise} usersInfo = {userInfo} />} />
+      <Route exact path="/Weight" element={<Weight exercise={storedExercise} usersInfo = {userInfo} pullInfo = {pull_userInfo} />} />
       <Route exact path="/Calorie" element={ <Calorie usersInfo = {userInfo} /> } />
       <Route exact path="/Userprofile" element={ <Userprofile usersInfo = {userInfo} /> } />
-      <Route exact path="/UdateAccount" element={ <UpdateAccount /> } />
+      <Route exact path="/UdateAccount" element={ <UpdateAccount usersInfo = {userInfo}/> } />
       <Route exact path="/SignUp" element={ <SignUp /> } />
       </Routes>
     </div>
