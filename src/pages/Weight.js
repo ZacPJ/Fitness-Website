@@ -15,6 +15,9 @@ async function setVars(propsInner) {
 function Weight (props){
     const [listExercise, setExercise] = useState([])
     useEffect(()=>{
+        props.setIsNav(true)
+    }, [])
+    useEffect(()=>{
         setExercise(listArray)
       },[listExercise])
     console.log(`Weight name ${props.usersInfo.name}`)

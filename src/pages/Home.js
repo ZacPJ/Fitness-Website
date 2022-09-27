@@ -1,13 +1,15 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Login from "./components/Login.js"
 import { Route, Routes, Link } from "react-router-dom";
 import SignUp from './SignUp';
 
-function Home() {
+function Home(props) {
 
     const [user, setUser] = useState();
-
+    useEffect(()=>{
+        props.setIsNav(false)
+    }, [])
     return (
         <div>
 
