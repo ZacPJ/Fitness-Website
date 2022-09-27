@@ -47,9 +47,9 @@ function Home(props) {
 
                 <h1 className="title">Home page</h1>
                 
-                {!user ?
+                {!userEmail ?
                     <div className="form">
-                        <Login setter={setUser} />
+                        <Login setter={setUserEmail} />
 
                         <Link to="/SignUp">Create an account</Link>
                         <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
@@ -57,7 +57,7 @@ function Home(props) {
                     </div>
                     :
                     <div>
-                        successfully signed in with the email {user}, this message can be removed later
+                        successfully signed in with the email {userEmail}, this message can be removed later
                     </div>
                 }
             
