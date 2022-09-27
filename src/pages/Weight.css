@@ -6,7 +6,6 @@
     flex-direction: row;
     align-items: center;
     min-height: 10px;
-    background-color: bisque;
     justify-content: space-around;
     
 }
@@ -16,7 +15,6 @@
     height: auto;
     justify-content: space-around;
     min-height: 10px;
-    background-color: pink;
 }
 
 .dropdown {

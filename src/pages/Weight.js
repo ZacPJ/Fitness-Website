@@ -71,6 +71,9 @@ function Weight (props){
                     <div className = "innerWeightFlex">
                         <p>Target Weight</p>
                     </div>
+                    <div className = "innerWeightFlex">
+                        <p>Total Calories Burned</p>
+                    </div>
                 </div>
                 <div className = "weightFlex">
                     <div className = "innerWeightFlex">
@@ -78,6 +81,9 @@ function Weight (props){
                     </div>
                     <div className = "innerWeightFlex">
                         <p>{props.usersInfo.desiredWeight}</p>
+                    </div>
+                    <div className = "innerWeightFlex">
+                        <p>{props.usersInfo.calories}</p>
                     </div>
                 </div>
                 <div className = "weightFlex">
