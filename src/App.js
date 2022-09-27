@@ -51,7 +51,7 @@ useEffect(()=>{
       <Routes>
       <Route exact path="/" element={ <Home /> } />
       <Route exact path="/Weight" element={<Weight exercise={storedExercise} usersInfo = {userInfo} />} />
-      <Route exact path="/Calorie" element={ <Calorie /> } />
+      <Route exact path="/Calorie" element={ <Calorie usersInfo = {userInfo} /> } />
       <Route exact path="/Userprofile" element={ <Userprofile /> } />
       <Route exact path="/UdateAccount" element={ <UpdateAccount /> } />
       <Route exact path="/SignUp" element={ <SignUp /> } />
