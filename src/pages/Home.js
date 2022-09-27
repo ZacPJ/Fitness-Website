@@ -36,7 +36,6 @@ function Home(props) {
 
     return (
 
-        <div>
 
             <div className="wrapper">
 
@@ -63,13 +62,7 @@ function Home(props) {
                         successfully signed in with the email {user}, this message can be removed later
                     </div>
                 }
-            </div>
-
-                </div> :
-                <div>
-                    successfully signed in with the email {userEmail}, this message can be removed later
-                </div>
-            }
+            
 
 
         </div>
