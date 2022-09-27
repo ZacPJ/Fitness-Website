@@ -20,7 +20,7 @@ function Home (){
             loginWithToken(cookie);
         }
 
-      },[])
+    },[])
 
     async function loginWithToken(cookie)
     {

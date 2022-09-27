@@ -17,7 +17,7 @@ function Weight (props){
     const [listExercise, setExercise] = useState([])
     useEffect(()=>{
         setExercise(listArray)
-      },[listExercise])
+    },[listExercise])
     console.log(`Weight name ${props.usersInfo.name}`)
     setVars(props) 
     function Submit(event){

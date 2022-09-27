@@ -2,9 +2,16 @@ import React from "react";
 import '../pages/Userprofile.css';
 import { Route, Routes, Link } from "react-router-dom";
 import UpdateAccount from './UpdateAccount';
+import Deleteuser from "./components/Deleteuser";
+let userInfo =[]
+async function setVars(props) {
+    userInfo = await props.usersInfo
+    return props
+}
 
 
-function Userprofile() {
+function Userprofile(props) {
+    setVars(props)
     return (
         <div>
             <h1 className="heading">Userprofile page</h1>
@@ -16,19 +23,30 @@ function Userprofile() {
             <div class="card">
                 <div class="content">
                     <div class="front">
-                        <h3 class="title">Name</h3>
-                        <p class="subtitle">Personal info :D</p>
+                        <h3 class="title">{userInfo.name}</h3>
+                        <p class="subtitle">{userInfo.email}</p>
                     </div>
 
                     <div class="back">
                         <p class="description">
                             Userprofile Info Here
+                            <br></br>
+                            Desired Weight: {userInfo.desiredWeight}
+                            <br></br>
+                            Sex: {userInfo.sex}
+                            <br></br>
+                            Height: {userInfo.height}
+                            <br></br>
+                            Age: {userInfo.age}
+                            <br></br>
+                            calories: {userInfo.calories}
                         </p>
                     </div>
                 </div>
             </div>
             <div>
-                <button className="deletebutton" >Delete Account</button>
+            <Deleteuser />
+                <button onClick={<Deleteuser />} className="deletebutton" >Delete Account</button>
             </div>
         </div>
     )
