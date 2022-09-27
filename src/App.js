@@ -22,7 +22,7 @@ const [storedExercise, setExercise] = useState([])
 const [userInfo, setUserInfo] = useState([])
 async function pull_userInfo(data){
   await setUserInfo(data)
-  console.log(This is data sent fromt the child)
+  console.log(`This is data sent fromt the child`)
   console.log(data)
 }
 useEffect(()=>{
@@ -42,12 +42,12 @@ useEffect(()=>{
         console.log("signed in with cookies on app.js");
     }
   console.log(storedExercise)
-  console.log(User test ${userInfo.name})
+  console.log(`User test ${userInfo.name}`)
 
 
 
 
-
+  
   return (
 
     <div>
