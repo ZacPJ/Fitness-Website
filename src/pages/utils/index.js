@@ -159,3 +159,25 @@ export const removeUser = async(email,password) =>{
         console.log(error);
     }
 }
+
+
+export const listUserCals = async () =>{
+    try
+    {
+        const response = await fetch("http://localhost:5000/user/listUsersCals",{
+            method: "GET",
+            headers:
+            {
+                "Content-Type": "application/json",
+            }
+        });
+
+        const data = await response.json();
+        console.log(data.users);
+        return data.users;
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+}

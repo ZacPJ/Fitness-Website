@@ -23,6 +23,8 @@
 const calorieCount = (weight,height,age,intensity,time,sex) =>{
     //This will be a basic way to count the number of calories burned during the different intense excercises
     let BMR = 0
+    weight = weight*2.2
+    height = height*0.39
     let intensityCalc = 0
     switch(sex){
         case "male":

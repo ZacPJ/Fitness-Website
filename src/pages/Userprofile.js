@@ -6,7 +6,7 @@ import Deleteuser from "./components/Deleteuser";
 let userInfo =[]
 async function setVars(props) {
     userInfo = await props.usersInfo
-    return props
+    await props.setIsNav(true)
 }
 
 
