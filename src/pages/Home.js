@@ -4,7 +4,7 @@ import Login from "./components/Login.js"
 import { Route, Routes, Link } from "react-router-dom";
 import SignUp from './SignUp';
 
-import './Home.css';
+import HomeStyles from './Home.css';
 import { getCookie } from "./common/index.js";
 import { findUser } from "./utils/index.js";
 
@@ -14,19 +14,17 @@ function Home(props) {
     useEffect(() => {
         props.setIsNav(false)
     }, [])
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         let cookie = getCookie("jwt_token");
         console.log(cookie);
-        if (cookie !== false)
-        {
+        if (cookie !== false) {
             loginWithToken(cookie);
         }
 
-    },[])
+    }, [])
 
-    async function loginWithToken(cookie)
-    {
+    async function loginWithToken(cookie) {
         const cookieUser = await findUser(cookie);
         setUserEmail(cookieUser.email);
         console.log("signed in with cookies");
@@ -35,35 +33,39 @@ function Home(props) {
     return (
 
 
-            <div className="wrapper">
+        <div>
 
-                <div id="nav-white">
-                    <div id="nav-left">
-                        <ul>
-                            <Link className="tesla-font-black" to="/">MI40</Link>
-                        </ul>
-                    </div>
+            < div id="nav-white" >
+                <div id="nav-left">
+                    <ul>
+                        <Link className="tesla-font-black" to="/">MI40</Link>
+                    </ul>
                 </div>
+            </div >
 
-                <h1 className="title">Home page</h1>
-                
-                {!userEmail ?
-                    <div className="form">
-                        <Login setter={setUserEmail} />
+            <div style={{ margin: "0 70px" }}>
 
-                        <Link to="/SignUp">Create an account</Link>
-                        <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
+                {
+                    !userEmail ?
+                        <div className="form">
+                            <Login setter={setUserEmail} />
 
-                    </div>
-                    :
-                    <div>
-                        successfully signed in with the email {userEmail}, this message can be removed later
-                    </div>
+                            <Link to="/SignUp">Create an account</Link>
+                            <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
+
+                        </div>
+                        :
+                        <div>
+                            successfully signed in with the email {userEmail}, this message can be removed later
+                        </div>
                 }
-            
+
+            </div>
 
 
-        </div>
+
+
+        </div >
     )
 }
 
