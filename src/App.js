@@ -55,7 +55,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home setIsNav = {setIsNav} isNav = {isNav} />} />
           <Route exact path="/Weight" element={<Weight isNav = {isNav} setIsNav = {setIsNav} exercise={storedExercise} usersInfo={userInfo} pullInfo={pull_userInfo} />} />
-          <Route exact path="/Calorie" element={<Calorie usersInfo={userInfo} />} />
+          <Route exact path="/Calorie" element={<Calorie usersInfo={userInfo} isNav = {isNav} setIsNav = {setIsNav}/>} />
           <Route exact path="/Userprofile" element={<Userprofile usersInfo = {userInfo}/>} />
           <Route exact path="/UdateAccount" element={<UpdateAccount usersInfo={userInfo} />} />
           <Route exact path="/SignUp" element={<SignUp />} />

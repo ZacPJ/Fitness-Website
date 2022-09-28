@@ -1,5 +1,6 @@
 import React from "react";
 import '../pages/Calorie.css';
+import { useEffect } from "react";
 import {listUserCals} from "./utils"
 let usersInfo = {calories:0}
 let allUsers =[]
@@ -15,6 +16,9 @@ async function getUsers(){
 function Calorie (props){
     setVars(props)
     getUsers()
+    useEffect(()=>{
+        props.setIsNav(true)
+    }, [])
     console.log("BREAK")
     return(
         <div>
