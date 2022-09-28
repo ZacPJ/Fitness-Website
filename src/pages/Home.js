@@ -48,7 +48,7 @@ function Home(props) {
                 <div id="nav-white">
                     <div id="nav-left">
                         <ul>
-                            <Link className="tesla-font-black" to="/">MI40</Link>
+                            <Link className="tesla-font-black" to="/"></Link>
                         </ul>
                     </div>
                 </div>
