@@ -50,9 +50,8 @@ function Userprofile(props) {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="deletebutton" >
             <Deleteuser />
-                <button onClick={<Deleteuser />} className="deletebutton" >Delete Account</button>
             </div>
         </div>
     )
