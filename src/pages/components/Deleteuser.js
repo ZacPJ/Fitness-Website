@@ -2,10 +2,11 @@ import React from "react";
 import { removeUser } from "../utils";
 import { findUser } from "../utils";
 import { getCookie } from "../common";
+import {useNavigate}  from "react-router-dom"
 
 
 const Deleteuser = () =>{
-
+    const navigate = useNavigate()
     // const [email, setEmail] = useState();
     // const [password, setPassword] = useState();
     async function searchUser() {
@@ -22,8 +23,9 @@ const Deleteuser = () =>{
     async function submitHandler(event)
     {
         event.preventDefault();
-        
+        let path = "/"
         searchUser()
+        navigate(path)
     }
 
     return(
