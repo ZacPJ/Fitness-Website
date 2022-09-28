@@ -1,12 +1,14 @@
 import React from "react";
+import { useState  } from "react";
 import '../pages/Calorie.css';
 import { useEffect } from "react";
 import {listUserCals} from "./utils"
-let usersInfo = {calories:0}
-let allUsers =[]
+let usersInfo = []
+let allUsers = []
 async function setVars(props) {
     usersInfo = await props.usersInfo
-    
+    await props.setIsNav(true)
+    await getUsers()
 }
 async function getUsers(){
     allUsers = await listUserCals()
@@ -14,21 +16,28 @@ async function getUsers(){
 }
 
 function Calorie (props){
+    const [userInfoState, setUserInfoVar] = useState([])
+    const [allUsersState, setAllUsersState] = useState([])
     setVars(props)
-    getUsers()
+    console.log(props.usersInfo)
     useEffect(()=>{
+        
+        setUserInfoVar(usersInfo)
+        setAllUsersState(allUsers)
         props.setIsNav(true)
-    }, [])
+    }, [userInfoState])
+
+
     console.log("BREAK")
     return(
         <div>
             <h1 className="title">Calorie page</h1>
-            <h2>Your Total Calories Burned: {usersInfo.calories}</h2>
+            <h2>Your Total Calories Burned: {userInfoState.calories}</h2>
         <div>
             <h1>Top Calories Burned</h1>
-            {allUsers?.length > -1 ? (
+            {allUsersState?.length > 0 ? (
                     <div>
-                {allUsers.map((arrayVar,index)=>{
+                {allUsersState.map((arrayVar,index)=>{
                     let suffix = ""
                     let indexUnit = String(index+1).slice(-1)
                     switch(indexUnit){
