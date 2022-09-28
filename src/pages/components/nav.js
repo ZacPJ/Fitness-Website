@@ -13,7 +13,7 @@ function Navbar() {
             <div id="nav-center">
                 <ul>
                     <Link className="nav-link" to="/Weight">Weight</Link>
-                    <Link className="nav-link" to="/Calorie">Calorie</Link>
+                    <Link className="nav-link" to="/Calorie">Calories Leaderboard</Link>
                 </ul>
             </div>
             <div id="nav-right">
