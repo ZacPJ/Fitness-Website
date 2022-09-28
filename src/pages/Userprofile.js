@@ -1,10 +1,10 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import '../pages/Userprofile.css';
 import { Route, Routes, Link } from "react-router-dom";
 import UpdateAccount from './UpdateAccount';
 import Deleteuser from "./components/Deleteuser";
-let userInfo =[]
+let userInfo = []
 async function setVars(props) {
     userInfo = await props.usersInfo
     await props.setIsNav(true)
@@ -13,7 +13,7 @@ async function setVars(props) {
 
 function Userprofile(props) {
     const [userInfoState, setUserInfoVar] = useState([])
-    useEffect(()=>{
+    useEffect(() => {
         setUserInfoVar(userInfo)
         props.setIsNav(true)
     }, [userInfoState])
@@ -51,7 +51,7 @@ function Userprofile(props) {
                 </div>
             </div>
             <div className="deletebutton" >
-            <Deleteuser />
+                <Deleteuser />
             </div>
         </div>
     )

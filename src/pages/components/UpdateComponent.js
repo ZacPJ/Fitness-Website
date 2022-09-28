@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { update } from "../utils";
-import {useNavigate}  from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 let usersInfo = []
 async function setVars(props) {
     usersInfo = await props.userInfo
     return props
 }
 
-const UpdateUserInfo = (props) =>{
+const UpdateUserInfo = (props) => {
     setVars(props)
     const [email, setEmail] = useState();
     const [name, setName] = useState();
@@ -19,14 +19,13 @@ const UpdateUserInfo = (props) =>{
     // const [password, setPassword] = useState();
     // email, name, desiredWeight, sex, height, age 
     const navigate = useNavigate()
-    async function submitHandler(event)
-    {
+    async function submitHandler(event) {
         event.preventDefault();
-        await update(email, name, desiredWeight, sex, height, age,usersInfo.calories);
+        await update(email, name, desiredWeight, sex, height, age, usersInfo.calories);
         navigate("/Userprofile")
     }
 
-    return(
+    return (
         <form onSubmit={submitHandler} className="userForm">
 
             <div className="formFields">
@@ -57,7 +56,7 @@ const UpdateUserInfo = (props) =>{
                     <option value="male">male</option>
                     <option value="female">female</option>
                     <option value="other">other</option>
-                </select> 
+                </select>
                 <br></br>
 
                 <label>
@@ -73,7 +72,7 @@ const UpdateUserInfo = (props) =>{
                 <br></br>
             </div>
 
-            <button type = "submit" className="updateButton"> Update </button>
+            <button type="submit" className="updateButton"> Update </button>
 
         </form>
     )

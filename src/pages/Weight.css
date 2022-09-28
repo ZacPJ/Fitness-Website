@@ -1,5 +1,5 @@
-.weightFlex{
-    display:flex;
+.weightFlex {
+    display: flex;
     width: 100%;
     height: auto;
     list-style: none;
@@ -7,10 +7,11 @@
     align-items: center;
     min-height: 10px;
     justify-content: space-around;
-    
+
 }
-.innerWeightFlex{
-    display:flex;
+
+.innerWeightFlex {
+    display: flex;
     width: 50%;
     height: auto;
     justify-content: space-around;
@@ -23,7 +24,8 @@
     width: fit-content;
 
 }
-.buttonExercise{
+
+.buttonExercise {
     width: fit-content;
     vertical-align: middle;
     text-align: center;
@@ -34,11 +36,12 @@
     font-size: 25px;
     height: fit-content;
     border-radius: 25px;
-    color:white;
+    color: white;
     background-color: #648ad4;
 }
-.chosenDescriptionFlex{
-height: auto;
-width: 450px;
-padding: 10px;
+
+.chosenDescriptionFlex {
+    height: auto;
+    width: 450px;
+    padding: 10px;
 }

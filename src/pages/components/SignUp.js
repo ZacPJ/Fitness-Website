@@ -3,7 +3,7 @@ import { useState } from "react";
 import { signUp } from "../utils";
 
 
-const SignUp = ({setter}) =>{
+const SignUp = ({ setter }) => {
 
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -16,13 +16,12 @@ const SignUp = ({setter}) =>{
 
 
 
-    async function submitHandler(event)
-    {
+    async function submitHandler(event) {
         event.preventDefault();
-        await signUp(name,email,password,weight,desiredWeight,age,height,sex,setter);
+        await signUp(name, email, password, weight, desiredWeight, age, height, sex, setter);
     }
 
-    return(
+    return (
         <form onSubmit={submitHandler} className="userForm">
 
             <div className="formFields">
@@ -77,14 +76,14 @@ const SignUp = ({setter}) =>{
                     <option value="male">male</option>
                     <option value="female">female</option>
                     <option value="other">other</option>
-                </select> 
+                </select>
                 <br></br>
 
 
 
             </div>
 
-            <button type = "submit"> sign up </button>
+            <button type="submit"> sign up </button>
 
         </form>
     )
