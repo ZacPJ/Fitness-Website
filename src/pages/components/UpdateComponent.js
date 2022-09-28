@@ -43,7 +43,7 @@ const UpdateUserInfo = (props) =>{
                 <br></br>
 
                 <label>
-                    Desired Weight
+                    Desired Weight(Kg)
                     <input onChange={(event) => setDesiredWieght(event.target.value)} />
                 </label>
                 <br></br>
@@ -60,7 +60,7 @@ const UpdateUserInfo = (props) =>{
                 <br></br>
 
                 <label>
-                    Height
+                    Height(cm)
                     <input onChange={(event) => setHeight(event.target.value)} />
                 </label>
                 <br></br>
