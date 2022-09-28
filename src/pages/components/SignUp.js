@@ -44,13 +44,13 @@ const SignUp = ({setter}) =>{
                 <br></br>
 
                 <label>
-                    weight
+                    weight(Kg)
                     <input onChange={(event) => setWeight(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label>
-                    target weight
+                    target weight(Kg)
                     <input onChange={(event) => setDesiredWeight(event.target.value)} />
                 </label>
                 <br></br>
@@ -62,7 +62,7 @@ const SignUp = ({setter}) =>{
                 <br></br>
 
                 <label>
-                    height
+                    height(cm)
                     <input onChange={(event) => setHeight(event.target.value)} />
                 </label>
                 <br></br>
