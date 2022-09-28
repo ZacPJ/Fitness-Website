@@ -4,7 +4,7 @@ import Login from "./components/Login.js"
 import { Route, Routes, Link } from "react-router-dom";
 import SignUp from './SignUp';
 
-import './Home.css';
+import HomeStyles from './Home.css';
 import { getCookie } from "./common/index.js";
 import { findUser } from "./utils/index.js";
 
@@ -15,27 +15,27 @@ function Home(props) {
     useEffect(() => {
         props.setIsNav(false)
     }, [])
-    useEffect(()=>{
+
+    useEffect(() => {
+
         let cookie = getCookie("jwt_token");
         console.log(cookie);
-        if (cookie !== false)
-        {
+        if (cookie !== false) {
             loginWithToken(cookie);
         }
-    },[])
 
-    async function loginWithToken(cookie)
-    {
+    }, [])
+
+    async function loginWithToken(cookie) {
         const cookieUser = await findUser(cookie);
         setUserEmail(cookieUser.email);
         console.log("signed in with cookies");
         props.setIsNav(true)
     }
 
-    async function logOut()
-    {
+    async function logOut() {
         let name = 'jwt_token'
-        document.cookie = await name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        document.cookie = await name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         setUserEmail();
         window.location.reload(false);
     }
@@ -43,38 +43,46 @@ function Home(props) {
     return (
 
 
-            <div className="wrapper">
+        <div>
 
-                <div id="nav-white">
-                    <div id="nav-left">
-                        <ul>
-                            <Link className="tesla-font-black" to="/"></Link>
-                        </ul>
-                    </div>
-                </div>
 
-                <h1 className="title">Home page</h1>
-                
-                {!userEmail ?
-                    <div className="form">
-                        <Login setter={setUserEmail} />
+            <div style={{ margin: "0 70px" }}>
 
-                        <Link to="/SignUp">Create an account</Link>
-                        <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
+                {
+                    !userEmail ?
+                        <div>
+                            < div id="nav-white" >
+                                <div id="nav-left">
+                                    <ul>
+                                        <Link className="tesla-font-black" to="/">MI40</Link>
+                                    </ul>
 
-                    </div>
-                    :
-                    <div>
-                        successfully signed in with the email {userEmail}, this message can be removed later
+                                </div>
+                            </div >
+                            <div className="form">
+                                <Login setter={setUserEmail} />
 
-                        <br></br>
-                        <button onClick={ () => logOut() }>sign out</button>
-                    </div>
+                                <Link to="/SignUp">Create an account</Link>
+                                <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
+
+
+                            </div>
+                        </div>
+                        :
+                        <div>
+                            successfully signed in with the email {userEmail}, this message can be removed later
+
+                            <br></br>
+                            <button onClick={() => logOut()}>sign out</button>
+                        </div>
                 }
-            
+
+            </div>
 
 
-        </div>
+
+
+        </div >
     )
 }
 

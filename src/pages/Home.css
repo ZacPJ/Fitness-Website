@@ -1,8 +1,8 @@
 /* Initial styling done, will proceed on branch enhancement/home_style_hk */
 
 
-/* body {
-    background-color:#000;
+body {
+    background-color:#FFF;
 }
 
 #nav-white {
@@ -35,6 +35,20 @@
     transition: all .2s ease-in-out;
 }
 
-#form {
+.form {
     border: solid black;
-} */
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 70vh;
+}
+
+.tesla-font-black:hover {
+    transform: scale(1.2);
+    text-shadow:0px 0px 30px #000  ;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
