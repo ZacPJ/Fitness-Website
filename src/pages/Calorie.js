@@ -40,46 +40,49 @@ function Calorie(props) {
             <h2>Your Total Calories Burned: {userInfoState.calories}</h2>
             <div>
                 <h1>Top Calories Burned</h1>
-                {allUsersState?.length > 0 ? (
-                    <div>
-                        {allUsersState.map((arrayVar, index) => {
-                            pageLoad = 1
-                            let suffix = ""
-                            let indexUnit = String(index + 1).slice(-1)
-                            switch (indexUnit) {
-                                case "1":
-                                    suffix = "st"
-                                    break
-                                case "2":
-                                    suffix = "nd"
-                                    break
-                                case "3":
-                                    suffix = "rd"
-                                    break
-                                default:
-                                    suffix = "th"
-                                    break
-                            }
-                            return (
-                                <div key={index}>
-                                    <div>
+                <div className="leaderBoardInfoFlex">
+                    {allUsersState?.length > 0 ? (
+                        <div>
+                            {allUsersState.map((arrayVar, index) => {
+                                pageLoad = 1
+                                let suffix = ""
+                                let indexUnit = String(index + 1).slice(-1)
+                                switch (indexUnit) {
+                                    case "1":
+                                        suffix = "st"
+                                        break
+                                    case "2":
+                                        suffix = "nd"
+                                        break
+                                    case "3":
+                                        suffix = "rd"
+                                        break
+                                    default:
+                                        suffix = "th"
+                                        break
+                                }
+                                return (
+                                    <div key={index}>
                                         <div>
-                                            <p>{index + 1}{suffix} {arrayVar.name} burned a total of {arrayVar.calories} calories</p>
+                                            <div>
+                                                <p className="leaderBoardInfo">{index + 1}{suffix} {arrayVar.name} burned a total of {arrayVar.calories} calories</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        })
-                        }
-                    </div>
-                ) : (
-                    <div>
-                        <h2>~~~Error Getting Leaderboard~~~</h2>
-                    </div>
-                )}
+                                )
+                            })
+                            }
+
+                        </div>
+                    ) : (
+                        <div>
+                            <h2>~~~Error Getting Leaderboard~~~</h2>
+                        </div>
+                    )}
+                </div>    
+                </div>
             </div>
-        </div>
-    )
+            )
 }
 
-export default Calorie;
+            export default Calorie;

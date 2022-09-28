@@ -1,0 +1,8 @@
+.leaderBoardInfoFlex{
+    display: flex;
+    width: fit-content;
+}
+.leaderBoardInfo{
+    background-color: #607D8B;
+    width: auto;
+}
