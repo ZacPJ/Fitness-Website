@@ -1,8 +1,59 @@
 .leaderBoardInfoFlex{
     display: flex;
     width: fit-content;
+    height: 500px;
+    justify-content: center;
+    padding: 50px;
+    padding-top: 0px;
+    margin-top: 15px;
+    background-color: #465861;
+    border-radius: 15px;
+    font-size: 30px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.title{
+    padding: 25px;
 }
 .leaderBoardInfo{
+    display: flex;
     background-color: #607D8B;
     width: auto;
+    padding: 10px;
+    flex-direction: row;
+    list-style: none;
+    border-radius: 15px;
+}
+.leaderBoardInfoEven{
+    background-color: #7ea0b1;
+    display: flex;
+    width: auto;
+    padding: 10px;
+    flex-direction: row;
+    list-style: none;
+    border-radius: 15px;
+}
+.leaderBoardInfoYou{
+    background-color: #a3e9ce;
+    display: flex;
+    width: auto;
+    padding: 10px;
+    flex-direction: row;
+    list-style: none;
+    border-radius: 15px;
+}
+.position{
+    display: flex;
+    padding-right: 15px;
+    background-color: inherit;
+    align-self: left;
+    
+}
+.primaryLeaderBoardFlex{
+display: flex;
+margin: 100px;
+flex-direction: column;
+align-items: center;
+width: auto;
+font-size: 40px;
 }

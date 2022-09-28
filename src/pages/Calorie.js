@@ -36,17 +36,19 @@ function Calorie(props) {
     console.log("BREAK")
     return (
         <div>
-            <h1 className="title">Calorie page</h1>
-            <h2>Your Total Calories Burned: {userInfoState.calories}</h2>
-            <div>
+            <h1 className="title">Your Total Calories Burned: {userInfoState.calories}</h1>
+
+            <div className = "primaryLeaderBoardFlex">
                 <h1>Top Calories Burned</h1>
                 <div className="leaderBoardInfoFlex">
                     {allUsersState?.length > 0 ? (
                         <div>
                             {allUsersState.map((arrayVar, index) => {
+                                let isEven = true
+                                let isYou = false
                                 pageLoad = 1
                                 let suffix = ""
-                                let indexUnit = String(index + 1).slice(-1)
+                                let indexUnit = String(index + 1).slice(-1,2)
                                 switch (indexUnit) {
                                     case "1":
                                         suffix = "st"
@@ -61,11 +63,21 @@ function Calorie(props) {
                                         suffix = "th"
                                         break
                                 }
+                                if((index+1)%2 === 0){
+                                    console.log(`index is even`)
+                                    isEven = true
+                                }else{
+                                    isEven = false
+                                }
+                                if (arrayVar.name === userInfoState.name && arrayVar.calories === userInfoState.calories){
+                                    isYou = true
+                                }
                                 return (
                                     <div key={index}>
                                         <div>
-                                            <div>
-                                                <p className="leaderBoardInfo">{index + 1}{suffix} {arrayVar.name} burned a total of {arrayVar.calories} calories</p>
+                                            <div className = {isYou ? 'leaderBoardInfoYou' : isEven ? 'leaderBoardInfoEven' : 'leaderBoardInfo'}>
+                                                <li className = "position">{index + 1}{suffix}   </li>
+                                                <li>   {arrayVar.name} burned a total of {arrayVar.calories} calories</li>
                                             </div>
                                         </div>
                                     </div>
