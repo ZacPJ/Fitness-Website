@@ -19,19 +19,19 @@ const Login = ({ setter }) => {
 
             <div className="formFields">
                 <label>
-                    email
+                    Email:
+                    <br></br>
                     <input onChange={(event) => setEmail(event.target.value)} />
                 </label>
-                <br></br>
 
                 <label>
-                    password
+                    Password:
+                    <br></br>
                     <input type="password" onChange={(event) => setPassword(event.target.value)} />
                 </label>
-                <br></br>
+                <button type="submit" className="loginButton"> Sign In </button>
             </div>
 
-            <button type="submit" className="loginButton"> sign in </button>
 
         </form>
     )

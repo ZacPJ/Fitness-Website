@@ -39,7 +39,8 @@ body {
     border: solid 3px black;
     width: 40vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
     height: 70vh;
 }
