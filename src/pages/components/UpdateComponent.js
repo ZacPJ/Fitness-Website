@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { update } from "../utils";
-
+import {useNavigate}  from "react-router-dom"
 let usersInfo = []
 async function setVars(props) {
     usersInfo = await props.userInfo
@@ -18,11 +18,12 @@ const UpdateUserInfo = (props) =>{
     const [age, setAge] = useState();
     // const [password, setPassword] = useState();
     // email, name, desiredWeight, sex, height, age 
-
+    const navigate = useNavigate()
     async function submitHandler(event)
     {
         event.preventDefault();
         await update(email, name, desiredWeight, sex, height, age,usersInfo.calories);
+        navigate("/Userprofile")
     }
 
     return(
@@ -43,7 +44,7 @@ const UpdateUserInfo = (props) =>{
                 <br></br>
 
                 <label>
-                    Desired Weight
+                    Desired Weight(Kg)
                     <input onChange={(event) => setDesiredWieght(event.target.value)} />
                 </label>
                 <br></br>
@@ -60,7 +61,7 @@ const UpdateUserInfo = (props) =>{
                 <br></br>
 
                 <label>
-                    Height
+                    Height(cm)
                     <input onChange={(event) => setHeight(event.target.value)} />
                 </label>
                 <br></br>

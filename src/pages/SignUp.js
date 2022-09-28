@@ -23,6 +23,7 @@ function SignUpFunc()
             {!user ? 
             <div>
                 <SignUp setter = {setUser} />
+                <Link to="/">return to home page</Link>
             </div>: 
             <div>
                 account created, return to <Link to="/">home page</Link> to log in

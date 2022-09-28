@@ -12,9 +12,9 @@
 
 /* From uiverse.io by @JoseIsra */
 .card {
-    /* width: 12rem; */
     cursor: pointer;
     display: flex;
+    width: fit-content;
     justify-content: center;
     margin-left: 50%;
     margin-right: 50%;
@@ -38,6 +38,7 @@
 .front,
 .back {
     position: absolute;
+    width: fit-content;
     top: 0;
     left: 0;
     bottom: 0;

@@ -1,34 +1,49 @@
 import React from "react";
+import { useState  } from "react";
 import '../pages/Calorie.css';
 import { useEffect } from "react";
 import {listUserCals} from "./utils"
-let usersInfo = {calories:0}
-let allUsers =[]
+let usersInfo = []
+let allUsers = []
+let pageLoad = 0
 async function setVars(props) {
     usersInfo = await props.usersInfo
-    
-}
-async function getUsers(){
-    allUsers = await listUserCals()
-    allUsers = await allUsers.sort((a,b)=> b.calories - a.calories)
+    await props.setIsNav(true)
 }
 
+
+
 function Calorie (props){
+    async function getUsers(){
+        allUsers = await listUserCals()
+        allUsers = await allUsers.sort((a,b)=> b.calories - a.calories)
+        if (pageLoad===0){
+        setAllUsersState(allUsers)
+        }
+    }
+    const [userInfoState, setUserInfoVar] = useState([])
+    const [allUsersState, setAllUsersState] = useState([])
     setVars(props)
-    getUsers()
+    console.log(props.usersInfo)
     useEffect(()=>{
+        
+        setUserInfoVar(usersInfo)
+        setAllUsersState(allUsers)
         props.setIsNav(true)
-    }, [])
+    }, [userInfoState])
+    getUsers()
+
     console.log("BREAK")
     return(
         <div>
             <h1 className="title">Calorie page</h1>
-            <h2>Your Total Calories Burned: {usersInfo.calories}</h2>
+            <h2>Your Total Calories Burned: {userInfoState.calories}</h2>
         <div>
             <h1>Top Calories Burned</h1>
-            {allUsers?.length > -1 ? (
+            {allUsersState?.length > 0 ? (
                     <div>
-                {allUsers.map((arrayVar,index)=>{
+                {allUsersState.map((arrayVar,index)=>{
+                    pageLoad = 1
                     let suffix = ""
                     let indexUnit = String(index+1).slice(-1)
                     switch(indexUnit){
