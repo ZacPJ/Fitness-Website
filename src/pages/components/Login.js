@@ -1,19 +1,19 @@
 import React from "react";
 import { useState } from "react";
 import { login } from "../utils";
-
 const Login = ({setter}) =>{
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-
     async function submitHandler(event)
     {
         event.preventDefault();
         await login(email,password,setter);
+        window.location.reload(false);
     }
-
+ 
+    
     return(
         <form onSubmit={submitHandler} className="userForm">
 
