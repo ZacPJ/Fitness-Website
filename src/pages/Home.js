@@ -11,10 +11,10 @@ import { findUser } from "./utils/index.js";
 function Home(props) {
 
     const [userEmail, setUserEmail] = useState();
+    const [checkSign,setCheckSign] = useState()
     useEffect(() => {
         props.setIsNav(false)
     }, [])
-    
     useEffect(()=>{
         let cookie = getCookie("jwt_token");
         console.log(cookie);
@@ -22,7 +22,7 @@ function Home(props) {
         {
             loginWithToken(cookie);
         }
-
+        setCheckSign(cookie)
     },[])
 
     async function loginWithToken(cookie)
@@ -30,6 +30,7 @@ function Home(props) {
         const cookieUser = await findUser(cookie);
         setUserEmail(cookieUser.email);
         console.log("signed in with cookies");
+        props.setIsNav(true)
     }
 
     return (
