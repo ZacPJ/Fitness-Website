@@ -1,4 +1,5 @@
 import React from "react";
+import { useState,useEffect } from "react";
 import '../pages/Userprofile.css';
 import { Route, Routes, Link } from "react-router-dom";
 import UpdateAccount from './UpdateAccount';
@@ -11,6 +12,11 @@ async function setVars(props) {
 
 
 function Userprofile(props) {
+    const [userInfoState, setUserInfoVar] = useState([])
+    useEffect(()=>{
+        setUserInfoVar(userInfo)
+        props.setIsNav(true)
+    }, [userInfoState])
     setVars(props)
     return (
         <div>
@@ -23,23 +29,23 @@ function Userprofile(props) {
             <div class="card">
                 <div class="content">
                     <div class="front">
-                        <h3 class="title">{userInfo.name}</h3>
-                        <p class="subtitle">{userInfo.email}</p>
+                        <h3 class="title">{userInfoState.name}</h3>
+                        <p class="subtitle">{userInfoState.email}</p>
                     </div>
 
                     <div class="back">
                         <p class="description">
                             Userprofile Info Here
                             <br></br>
-                            Desired Weight: {userInfo.desiredWeight}
+                            Desired Weight: {userInfoState.desiredWeight}
                             <br></br>
-                            Sex: {userInfo.sex}
+                            Sex: {userInfoState.sex}
                             <br></br>
-                            Height: {userInfo.height}
+                            Height: {userInfoState.height}
                             <br></br>
-                            Age: {userInfo.age}
+                            Age: {userInfoState.age}
                             <br></br>
-                            calories: {userInfo.calories}
+                            calories: {userInfoState.calories}
                         </p>
                     </div>
                 </div>
