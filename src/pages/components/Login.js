@@ -1,20 +1,20 @@
 import React from "react";
 import { useState } from "react";
 import { login } from "../utils";
-const Login = ({setter}) =>{
+import './login.css'
+const Login = ({ setter }) => {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    async function submitHandler(event)
-    {
+    async function submitHandler(event) {
         event.preventDefault();
-        await login(email,password,setter);
+        await login(email, password, setter);
         window.location.reload(false);
     }
- 
-    
-    return(
+
+
+    return (
         <form onSubmit={submitHandler} className="userForm">
 
             <div className="formFields">
@@ -31,7 +31,7 @@ const Login = ({setter}) =>{
                 <br></br>
             </div>
 
-            <button type = "submit" className="loginButton"> sign in </button>
+            <button type="submit" className="loginButton"> sign in </button>
 
         </form>
     )
