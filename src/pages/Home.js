@@ -35,8 +35,9 @@ function Home(props) {
     async function logOut()
     {
         let name = 'jwt_token'
-        document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        document.cookie = await name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         setUserEmail();
+        window.location.reload(false);
     }
 
     return (
