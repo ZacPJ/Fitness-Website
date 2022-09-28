@@ -5,17 +5,22 @@ import { useEffect } from "react";
 import {listUserCals} from "./utils"
 let usersInfo = []
 let allUsers = []
+let pageLoad = 0
 async function setVars(props) {
     usersInfo = await props.usersInfo
     await props.setIsNav(true)
-    await getUsers()
-}
-async function getUsers(){
-    allUsers = await listUserCals()
-    allUsers = await allUsers.sort((a,b)=> b.calories - a.calories)
 }
 
+
+
 function Calorie (props){
+    async function getUsers(){
+        allUsers = await listUserCals()
+        allUsers = await allUsers.sort((a,b)=> b.calories - a.calories)
+        if (pageLoad===0){
+        setAllUsersState(allUsers)
+        }
+    }
     const [userInfoState, setUserInfoVar] = useState([])
     const [allUsersState, setAllUsersState] = useState([])
     setVars(props)
@@ -26,7 +31,7 @@ function Calorie (props){
         setAllUsersState(allUsers)
         props.setIsNav(true)
     }, [userInfoState])
-
+    getUsers()
 
     console.log("BREAK")
     return(
@@ -38,6 +43,7 @@ function Calorie (props){
             {allUsersState?.length > 0 ? (
                     <div>
                 {allUsersState.map((arrayVar,index)=>{
+                    pageLoad = 1
                     let suffix = ""
                     let indexUnit = String(index+1).slice(-1)
                     switch(indexUnit){
