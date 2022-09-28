@@ -34,6 +34,13 @@ function Home(props) {
         setCheckSign(true)
     }
 
+    async function logOut()
+    {
+        let name = 'jwt_token'
+        document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        setUserEmail();
+    }
+
     return (
 
 
@@ -60,6 +67,9 @@ function Home(props) {
                     :
                     <div>
                         successfully signed in with the email {userEmail}, this message can be removed later
+
+                        <br></br>
+                        <button onClick={ () => logOut() }>sign out</button>
                     </div>
                 }
             
