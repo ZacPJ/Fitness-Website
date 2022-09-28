@@ -11,7 +11,7 @@ import { findUser } from "./utils/index.js";
 function Home(props) {
 
     const [userEmail, setUserEmail] = useState();
-    const [checkSign,setCheckSign] = useState(false)
+
     useEffect(() => {
         props.setIsNav(false)
     }, [])
@@ -22,7 +22,6 @@ function Home(props) {
         {
             loginWithToken(cookie);
         }
-        setCheckSign(cookie)
     },[])
 
     async function loginWithToken(cookie)
@@ -31,7 +30,6 @@ function Home(props) {
         setUserEmail(cookieUser.email);
         console.log("signed in with cookies");
         props.setIsNav(true)
-        setCheckSign(true)
     }
 
     return (
