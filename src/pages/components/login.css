@@ -1,0 +1,25 @@
+.formFields label {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 15px;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    width: 30em;
+    padding: 5px;
+}
+
+.loginButton {
+    height: 2em;
+    margin: 15px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
