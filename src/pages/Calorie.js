@@ -48,7 +48,15 @@ function Calorie(props) {
                                 let isYou = false
                                 pageLoad = 1
                                 let suffix = ""
-                                let indexUnit = String(index + 1).slice(-1,2)
+                                let indexUnit = ""
+                                const numArray = ["11","12","13"]
+                                indexUnit = String(index + 1).slice(-1, 2)
+                                console.log(indexUnit)
+
+                                if (indexUnit in numArray){
+                                    suffix = "th"
+                                }else{
+                                indexUnit = String(index + 1).slice(-1)
                                 switch (indexUnit) {
                                     case "1":
                                         suffix = "st"
@@ -62,6 +70,7 @@ function Calorie(props) {
                                     default:
                                         suffix = "th"
                                         break
+                                }
                                 }
                                 if((index+1)%2 === 0){
                                     console.log(`index is even`)
