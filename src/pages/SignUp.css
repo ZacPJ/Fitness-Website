@@ -9,6 +9,7 @@
 .innerFlex{
     display: flex;
     height: auto;
+    justify-content: center;
 }
 .innerDiv{
     padding: 50px;
@@ -16,4 +17,21 @@
     border-width: 4px;
     padding-left: 120px;
     padding-right:120px;
+}
+.backArrow {
+    border: solid black;
+    border-width: 0 8px 8px 0;
+    display: inline-block;
+    padding: 8px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+.backArrowButton{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    border-radius: 15px;
+    background-color: #607D8B;
+
 }

@@ -29,7 +29,7 @@ function SignUpFunc() {
             {!user ?
                 <div>
                     <SignUp setter={setUser} />
-                    <button onClick={goHome}>return to home page</button>
+                    <button className = "backArrowButton" onClick={goHome}><span className = "backArrow"></span></button>
                 </div> :
                 <div>
                     account created, return to <Link to="/">home page</Link> to log in

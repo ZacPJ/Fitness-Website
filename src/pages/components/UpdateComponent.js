@@ -4,6 +4,7 @@ import { update } from "../utils";
 import { useNavigate } from "react-router-dom";
 import './updateComponent.css';
 
+
 let usersInfo = []
 const UpdateUserInfo = (props) => {
     async function setVars(props) {
@@ -84,10 +85,11 @@ const UpdateUserInfo = (props) => {
                     <button type="submit" className="loginButton"> Update </button>
 
                 </div>
-                <button onClick={ReturnToProfile}><span className="left" style={{}}></span></button>
-
 
             </form>
+
+            <button class = "backArrowButtonUpdate" onClick={ReturnToProfile}><span class = "backArrowUpdate"></span></button>
+
         </div>
     )
 }
