@@ -1,5 +1,6 @@
 
 import { React, useState, useEffect } from "react";
+import { act } from "react-dom/test-utils";
 import '../pages/Weight.css';
 import { calorieCount } from "./components/api_main"
 import { update } from "./utils";
@@ -7,12 +8,18 @@ let exercise = []
 let chosenDesc = []
 let listArray = []
 let usersInfo = []
+let grabCalories = 0
+let actualWeight = 0
+let initialiseTest = 0
 async function setVars(propsInner) {
     exercise = await propsInner.exercise
     usersInfo = await propsInner.usersInfo
     chosenDesc = await propsInner.exercise[0].description.replace("<p>", "").replace("</p>", "")
 }
 function Weight(props) {
+    if (initialiseTest != 1) {
+        actualWeight = props.usersInfo.currentWeight
+    }
     const [listExercise, setExercise] = useState([])
     useEffect(() => {
         props.setIsNav(true)
@@ -43,8 +50,13 @@ function Weight(props) {
         updateCalories(chosenObj.caloriesBurned)
 
         await props.pullInfo(usersInfo)
-        document.getElementById("currentWeight").style.textContent(10)
-
+        props.usersInfo.currentWeight = props.usersInfo.currentWeight - Math.round(grabCalories / 3500)
+        actualWeight = await actualWeight - grabCalories / 3500
+        console.log(actualWeight)
+        if (String(props.usersInfo.currentWeight < String(actualWeight).slice(0, 1))) {
+            props.usersInfo.currentWeight = await Math.ceil(actualWeight)
+        }
+        initialiseTest = 1
 
 
     }
@@ -60,7 +72,7 @@ function Weight(props) {
     async function updateCalories(calories) {
         calories = Math.round(calories)
         usersInfo.calories = calories + usersInfo.calories
-        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories))
+        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories),usersInfo.currentWeight)
     }
 
 
@@ -82,7 +94,7 @@ function Weight(props) {
             </div>
             <div className="weightFlex">
                 <div className="innerWeightFlexLower">
-                    <p id = "currentWeight">{props.usersInfo.currentWeight}</p>
+                    <p id="currentWeight">{props.usersInfo.currentWeight}</p>
                 </div>
                 <div className="innerWeightFlexLower">
                     <p>{props.usersInfo.desiredWeight}</p>
@@ -109,7 +121,7 @@ function Weight(props) {
                 <input onClick={Submit} type="submit" value="Submit" className="buttonExercise"></input>
             </div>
             <div className="chosenDescriptionFlexBox">
-                    <p id="chosenDescription" className="chosenDescriptionFlex">{chosenDesc}</p>
+                <p id="chosenDescription" className="chosenDescriptionFlex">{chosenDesc}</p>
             </div>
             <div className="descPrimaryFlex">
                 <h1>Your Exercises</h1>
@@ -117,6 +129,7 @@ function Weight(props) {
                     {listExercise?.length > 0 ? (
                         <div>
                             {listExercise.map((arrayVar, index) => {
+                                grabCalories = arrayVar.caloriesBurned
                                 return (
                                     <div key={index} className="descWeightFlex">
                                         <div className="groupDescFlex">
