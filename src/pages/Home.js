@@ -74,7 +74,7 @@ function Home(props) {
                         </div>
                         :
                         <div>
-                            successfully signed in with the email {userEmail}, this message can be removed later
+                            <h1 classname="title"> Welcome, {props.usersInfo.name} </h1>
 
                             <br></br>
                             <button onClick={() => logOut()}>sign out</button>
