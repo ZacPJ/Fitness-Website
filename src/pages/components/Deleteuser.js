@@ -4,7 +4,7 @@ import { findUser } from "../utils";
 import { getCookie } from "../common";
 import { useNavigate } from "react-router-dom"
 import { reloadOnDelete } from "../Home"
-
+import "./DeleteUser.css"
 
 const Deleteuser = () => {
     const navigate = useNavigate()
