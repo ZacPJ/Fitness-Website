@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { update } from "../utils";
 import { useNavigate } from "react-router-dom"
+import "./updateComponent.css"
 
 let usersInfo = []
 const UpdateUserInfo = (props) => {
@@ -84,7 +85,7 @@ const UpdateUserInfo = (props) => {
                 <button type="submit" className="updateButton"> Update </button>
 
             </form>
-            <button onClick={ReturnToProfile}>Back To Profile</button>
+            <button class = "backArrowButtonUpdate" onClick={ReturnToProfile}><span class = "backArrowUpdate"></span></button>
         </div>
     )
 }
