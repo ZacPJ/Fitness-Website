@@ -17,11 +17,15 @@ function SignUpFunc() {
         await window.location.reload(false);
     }
     return (
-        <div>
+        <div className = "mainFlex">
+            <div className = "innerDiv">
+            <div className="innerFlex">
+
+                
             <h1>Sign Up</h1>
 
-
-
+            </div>
+            <div className="innerFlex">
             {!user ?
                 <div>
                     <SignUp setter={setUser} />
@@ -34,6 +38,8 @@ function SignUpFunc() {
                     <Routes><Route exact path="/Home" element={<Home />} /></Routes>
                 </div>
             }
+            </div>
+        </div>
         </div>
     )
 }
