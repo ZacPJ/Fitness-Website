@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { useState, useEffect, forceUpdate } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import '../pages/Userprofile.css';
 import { Route, Routes, Link } from "react-router-dom";
 import UpdateAccount from './UpdateAccount';

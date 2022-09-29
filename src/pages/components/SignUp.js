@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { signUp } from "../utils";
-
+import { useNavigate } from "react-router-dom";
 
 const SignUp = ({ setter }) => {
-
+    const navigate = useNavigate()
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -19,6 +19,7 @@ const SignUp = ({ setter }) => {
     async function submitHandler(event) {
         event.preventDefault();
         await signUp(name, email, password, weight, desiredWeight, age, height, sex, setter);
+        navigate("/")
     }
 
     return (
