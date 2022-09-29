@@ -52,6 +52,8 @@
 
 .loginButton {
     border: none;
+    display: flex;
+    vertical-align: middle;
     border-radius: 30px;
     padding: 10px;
     cursor: pointer;

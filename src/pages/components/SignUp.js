@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { signUp } from "../utils";
 import { useNavigate } from "react-router-dom";
-
+import "./signUp.css"
 const SignUp = ({ setter }) => {
     const navigate = useNavigate()
     const [name, setName] = useState();
@@ -91,7 +91,7 @@ const SignUp = ({ setter }) => {
 
             </div>
 
-            <button type="submit"> sign up </button>
+            <button className="signUpButton" type="submit"> sign up </button>
 
         </form>
     )
