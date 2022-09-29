@@ -16,9 +16,8 @@ input {
 }
 
 .loginButton {
-    height: 2em;
     margin: 15px;
-    padding: 20px;
+    padding: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

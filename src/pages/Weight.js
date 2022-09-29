@@ -41,7 +41,9 @@ function Weight(props) {
         setExercise(...listArray, event)
         console.log(chosenExercise, timeExercised, chosenObj, listArray)
         updateCalories(chosenObj.caloriesBurned)
+
         await props.pullInfo(usersInfo)
+        //document.getElementById("currentWeight").style
 
 
 
@@ -80,7 +82,7 @@ function Weight(props) {
             </div>
             <div className="weightFlex">
                 <div className="innerWeightFlexLower">
-                    <p>{props.usersInfo.currentWeight}</p>
+                    <p id = "currentWeight">{props.usersInfo.currentWeight}</p>
                 </div>
                 <div className="innerWeightFlexLower">
                     <p>{props.usersInfo.desiredWeight}</p>
