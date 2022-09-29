@@ -66,7 +66,7 @@ function Home(props) {
                             <div className="form">
                                 <Login setter={setUserEmail} />
 
-                                <Link style={{ border: "solid yellow" }} to="/SignUp">Create an account</Link>
+                                <Link style={{  color: "#000"}} to="/SignUp">Create an account</Link>
                                 <Routes style={{ border: "solid 5px red" }}><Route exact path="/SignUp" element={<SignUp />} /></Routes>
 
 
