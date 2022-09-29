@@ -26,6 +26,12 @@ button{
   background-color: #648AD4;
   color: white;
 }
+select{
+max-width: 200px;
+width: fit-content;
+font-size: inherit;
+margin-left: 10px;
+}
 .nav-link {
   text-decoration: none;
   padding: 7px 16px;

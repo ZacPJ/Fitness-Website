@@ -81,12 +81,14 @@
     border-bottom-left-radius: 10px;
     margin-bottom: 10px;
 }
-
+select{
+    max-width: fit-content;
+}
 .dropdown {
     display: inline-block;
     position: relative;
     width: fit-content;
-
+    
 }
 .dropDownContent{
     background-color:#465861;
