@@ -26,6 +26,7 @@ function Userprofile(props) {
                 <Link to="/UdateAccount"><button className="updatebutton" >Update Account</button></Link>
                 <Routes><Route exact path="/UdateAccount" element={<UpdateAccount />} /></Routes>
             </div>
+            <div className="mainCard">
             <div className="card">
                 <div className="content">
                     <div className="front">
@@ -49,6 +50,7 @@ function Userprofile(props) {
                         </p>
                     </div>
                 </div>
+            </div>
             </div>
             <div className="deletebutton" >
                 <Deleteuser />

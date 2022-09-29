@@ -1,9 +1,12 @@
-.updatebutton {}
+.updatebutton {
+    margin-left: 22px;
+}
 
 .deletebutton {
     position: absolute;
     right: 0;
     bottom: 0;
+    margin-right: 20px;
 }
 
 /* ####################### BUTTONS ^^ ########################## */
@@ -45,6 +48,11 @@
     /* scrollbar-width: none; */
 }
 
+.mainCard{
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
 
 
 
