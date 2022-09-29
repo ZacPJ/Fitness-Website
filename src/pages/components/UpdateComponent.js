@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { update } from "../utils";
 import { useNavigate } from "react-router-dom"
-import './updateComponent.css'
+
 let usersInfo = []
 const UpdateUserInfo = (props) => {
     async function setVars(props) {
