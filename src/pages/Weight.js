@@ -109,36 +109,36 @@ function Weight(props) {
             <div className="chosenDescriptionFlex">
                 <label id="chosenDescription">{chosenDesc}</label>
             </div>
-            <div id="exerciseMap">
-                <div className="list">
-
-                    {listExercise?.length > 0 ? (
-                        <div>
-                            {listExercise.map((arrayVar, index) => {
-                                return (
-                                    <div key={index} className="weightFlex">
-                                        <div>
-                                            <div className="innerWeightFlex">
-                                                <p>{arrayVar.name} for {arrayVar.time} hours</p>
-                                            </div>
-                                            <div className="innerWeightFlex">
-                                                <p>This exercise burned a total of {Math.round(arrayVar.caloriesBurned)} calories</p>
-                                            </div>
+            <div className="descPrimaryFlex">
+                    <h1>Your Exercises</h1>
+            <div className="descSecondaryFlex">
+                {listExercise?.length > 0 ? (
+                    <div>
+                        {listExercise.map((arrayVar, index) => {
+                            return (
+                                <div key={index} className="descWeightFlex">
+                                    <div className="groupDescFlex">
+                                        <div className="innerDescFlex">
+                                            <p>{arrayVar.name} for {arrayVar.time} hours</p>
+                                        </div>
+                                        <div className="innerDescFlex">
+                                            <p>This exercise burned a total of {Math.round(arrayVar.caloriesBurned)} calories</p>
                                         </div>
                                     </div>
-                                )
-                            })
-                            }
-                        </div>
-                    ) : (
-                        <div>
-                            <h1>Nothing to display!</h1>
-                        </div>
-                    )}
-                </div>
+                                </div>
+                            )
+                        })
+                        }
+                    </div>
+                ) : (
+                    <div>
+                        <h1>Nothing to display!</h1>
+                    </div>
+                )}
+</div>
             </div>
-
         </div>
+
 
     )
 }

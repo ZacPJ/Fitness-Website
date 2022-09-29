@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { Component } from "react";
+import { useState, useEffect, forceUpdate } from "react";
 import '../pages/Userprofile.css';
 import { Route, Routes, Link } from "react-router-dom";
 import UpdateAccount from './UpdateAccount';
@@ -18,6 +18,10 @@ function Userprofile(props) {
         props.setIsNav(true)
     }, [userInfoState])
     setVars(props)
+    if (userInfoState === []){
+        setVars(props)
+    }
+
     return (
         <div>
             <h1 className="title">Userprofile page</h1>
@@ -50,7 +54,7 @@ function Userprofile(props) {
                     </div>
                 </div>
             </div>
-            <div className="deletebutton" >
+            <div className="deletebutton">
                 <Deleteuser />
             </div>
         </div>
