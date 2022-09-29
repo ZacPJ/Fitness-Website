@@ -56,8 +56,9 @@ function Weight(props) {
         if (String(props.usersInfo.currentWeight < String(actualWeight).slice(0, 1))) {
             props.usersInfo.currentWeight = await Math.ceil(actualWeight)
         }
+        usersInfo = await props.usersInfo.currentWeight
         initialiseTest = 1
-
+        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories),(props.usersInfo.currentWeight))
 
     }
     function exerciseDesc() {
@@ -72,7 +73,7 @@ function Weight(props) {
     async function updateCalories(calories) {
         calories = Math.round(calories)
         usersInfo.calories = calories + usersInfo.calories
-        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories),usersInfo.currentWeight)
+        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories),(usersInfo.currentWeight))
     }
 
 
