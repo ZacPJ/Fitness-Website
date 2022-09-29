@@ -43,17 +43,20 @@ async function ReturnToProfile(){
 
                 <label >
                     Name
+                    <br></br>
                     <input defaultValue={usersInfo.name} onChange={(event) => setName(event.target.value)} />
                 </label>
                 <br></br>
                 <label >
                     Current Weight(Kg)
+                    <br></br>
                     <input onChange={(event) => setCurrentWeight(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label >
                     Desired Weight(Kg)
+                    <br></br>
                     <input onChange={(event) => setDesiredWieght(event.target.value)} />
                 </label>
                 <br></br>
@@ -70,13 +73,17 @@ async function ReturnToProfile(){
                 <br></br>
 
                 <label >
+                <br></br>
                     Height(cm)
+                    <br></br>
                     <input onChange={(event) => setHeight(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label >
+                    
                     Age
+                    <br></br>
                     <input  onChange={(event) => setAge(event.target.value)} />
                 </label>
                 <br></br>
@@ -85,7 +92,7 @@ async function ReturnToProfile(){
             <button type="submit" className="updateButton"> Update </button>
 
         </form>
-        <button onClick = {ReturnToProfile}>Back</button>
+        <button onClick = {ReturnToProfile}>Back To Profile</button>
         </div>
     )
 }

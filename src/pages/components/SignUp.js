@@ -28,42 +28,49 @@ const SignUp = ({ setter }) => {
             <div className="formFields">
                 <label>
                     name
+                    <br></br>
                     <input onChange={(event) => setName(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label>
                     email
+                    <br></br>
                     <input onChange={(event) => setEmail(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label>
                     password
+                    <br></br>
                     <input type="password" onChange={(event) => setPassword(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label>
                     weight(Kg)
+                    <br></br>
                     <input onChange={(event) => setWeight(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label>
                     target weight(Kg)
+                    <br></br>
                     <input onChange={(event) => setDesiredWeight(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label>
                     age
+                    <br></br>
                     <input onChange={(event) => setAge(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label>
                     height(cm)
+                    <br></br>
                     <input onChange={(event) => setHeight(event.target.value)} />
                 </label>
                 <br></br>
