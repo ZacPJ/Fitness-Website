@@ -94,7 +94,7 @@ function Calorie(props) {
                         </div>
                     ) : (
                         <div>
-                            <h2>~~~Error Getting Leaderboard~~~</h2>
+                            <h2>~~~Retrieving Leaderboard~~~</h2>
                         </div>
                     )}
                 </div>    
