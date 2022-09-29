@@ -6,7 +6,7 @@ let usersInfo = []
 const UpdateUserInfo = (props) => {
     async function setVars(props) {
         usersInfo = await props.userInfo
-            setProps(true)
+        setProps(true)
     }
     setVars(props)
     const [email, setEmail] = useState();
@@ -44,15 +44,15 @@ const UpdateUserInfo = (props) => {
 
                 <label >
                     Desired Weight(Kg)
-                    <input defaultValue={usersInfo.desiredWeight} onChange={(event) => setDesiredWieght(event.target.value)} />
+                    <input onChange={(event) => setDesiredWieght(event.target.value)} />
                 </label>
                 <br></br>
 
 
                 <label for="sex">sex</label>
 
-                <select defaultValue = {usersInfo.sex} name="sex" onChange={(event) => setSex(event.target.value)}>
-                    <option hidden disabled selected value></option>
+                <select name="sex" onChange={(event) => setSex(event.target.value)}>
+                    <option hidden disabled selected value>{usersInfo.sex}</option>
                     <option value="male">male</option>
                     <option value="female">female</option>
                     <option value="other">other</option>
@@ -61,13 +61,13 @@ const UpdateUserInfo = (props) => {
 
                 <label >
                     Height(cm)
-                    <input defaultValue={usersInfo.height} onChange={(event) => setHeight(event.target.value)} />
+                    <input onChange={(event) => setHeight(event.target.value)} />
                 </label>
                 <br></br>
 
                 <label >
                     Age
-                    <input defaultValue={usersInfo.age} onChange={(event) => setAge(event.target.value)} />
+                    <input  onChange={(event) => setAge(event.target.value)} />
                 </label>
                 <br></br>
             </div>

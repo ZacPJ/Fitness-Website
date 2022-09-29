@@ -30,6 +30,7 @@ input:focus {
 .loginButton {
     border: none;
     border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
     background-color: #000;
     padding: 20px;
