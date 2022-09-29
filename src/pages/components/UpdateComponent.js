@@ -76,7 +76,7 @@ const UpdateUserInfo = (props) => {
 
             <button type="submit" className="updateButton"> Update </button>
 
-        </form>:
+        </form>
         </div>
     )
 }
