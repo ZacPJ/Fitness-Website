@@ -79,7 +79,7 @@ function Home(props) {
 
                             <p className="title">Our Weight Calculator will let you choose an exercise and figure out how many calories you have burned.</p>
                             <p className="title">Check out our leaderboard to see how your exercising compares to other people's.</p>
-                            <button onClick={() => logOut()}>Sign Out</button>
+                            <button className="loginButton" onClick={() => logOut()}>Sign Out</button>
 
                         </div>
                 }
