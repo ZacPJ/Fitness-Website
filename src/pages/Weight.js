@@ -65,7 +65,7 @@ function Weight(props) {
     return (
         <div>
             <div>
-                <h1>Weight page</h1>
+                <h1 className="title">Weight page</h1>
             </div>
             <div className="weightFlex">
                 <div className="innerWeightFlex">
@@ -79,13 +79,13 @@ function Weight(props) {
                 </div>
             </div>
             <div className="weightFlex">
-                <div className="innerWeightFlex">
+                <div className="innerWeightFlexLower">
                     <p>{props.usersInfo.currentWeight}</p>
                 </div>
-                <div className="innerWeightFlex">
+                <div className="innerWeightFlexLower">
                     <p>{props.usersInfo.desiredWeight}</p>
                 </div>
-                <div className="innerWeightFlex">
+                <div className="innerWeightFlexLower">
                     <p>{props.usersInfo.calories}</p>
                 </div>
             </div>
@@ -106,36 +106,36 @@ function Weight(props) {
                 </form>
                 <input onClick={Submit} type="submit" value="Submit" className="buttonExercise"></input>
             </div>
-            <div className="chosenDescriptionFlex">
-                <label id="chosenDescription">{chosenDesc}</label>
+            <div className="chosenDescriptionFlexBox">
+                    <p id="chosenDescription" className="chosenDescriptionFlex">{chosenDesc}</p>
             </div>
             <div className="descPrimaryFlex">
-                    <h1>Your Exercises</h1>
-            <div className="descSecondaryFlex">
-                {listExercise?.length > 0 ? (
-                    <div>
-                        {listExercise.map((arrayVar, index) => {
-                            return (
-                                <div key={index} className="descWeightFlex">
-                                    <div className="groupDescFlex">
-                                        <div className="innerDescFlex">
-                                            <p>{arrayVar.name} for {arrayVar.time} hours</p>
-                                        </div>
-                                        <div className="innerDescFlex">
-                                            <p>This exercise burned a total of {Math.round(arrayVar.caloriesBurned)} calories</p>
+                <h1>Your Exercises</h1>
+                <div className="descSecondaryFlex">
+                    {listExercise?.length > 0 ? (
+                        <div>
+                            {listExercise.map((arrayVar, index) => {
+                                return (
+                                    <div key={index} className="descWeightFlex">
+                                        <div className="groupDescFlex">
+                                            <div className="innerDescFlex">
+                                                <p>{arrayVar.name} for {arrayVar.time} hours</p>
+                                            </div>
+                                            <div className="innerDescFlex">
+                                                <p>This exercise burned a total of {Math.round(arrayVar.caloriesBurned)} calories</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        })
-                        }
-                    </div>
-                ) : (
-                    <div>
-                        <h1>Nothing to display!</h1>
-                    </div>
-                )}
-</div>
+                                )
+                            })
+                            }
+                        </div>
+                    ) : (
+                        <div>
+                            <h1>Nothing to display!</h1>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
 

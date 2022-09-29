@@ -38,6 +38,8 @@
     background-color: #607D8B;
     width: auto;
     height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 10px;
     border-radius: 15px;
 
@@ -56,8 +58,28 @@
     display: flex;
     width: 50%;
     height: auto;
+    background-color: #465861;
+    margin-left:10px;
+    margin-right: 10px;
+    color: aliceblue;
     justify-content: space-around;
     min-height: 10px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.innerWeightFlexLower {
+    display: flex;
+    width: 50%;
+    height: auto;
+    margin-left:10px;
+    margin-right: 10px;
+    background-color: #607D8B;
+    color: aliceblue;
+    justify-content: space-around;
+    min-height: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .dropdown {
@@ -66,7 +88,13 @@
     width: fit-content;
 
 }
-
+.dropDownContent{
+    background-color:#465861;
+    margin: 2px;
+}
+.dropDownContent:hover{
+    background-color: pink;
+}
 .buttonExercise {
     width: fit-content;
     vertical-align: middle;
@@ -79,11 +107,20 @@
     height: fit-content;
     border-radius: 25px;
     color: white;
-    background-color: #648ad4;
+    background-color:#648ad4;
 }
 
 .chosenDescriptionFlex {
-    height: auto;
-    width: 450px;
+    height: fit-content;
+    width: fit-content;
+    max-width: 500px;
     padding: 10px;
+}
+.chosenDescriptionFlexBox {
+    display: flex;
+    height: 150px;
+    width: auto;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
 }
