@@ -18,10 +18,6 @@ function Userprofile(props) {
         props.setIsNav(true)
     }, [userInfoState])
     setVars(props)
-    if (userInfoState === []){
-        setVars(props)
-    }
-
     return (
         <div>
             <h1 className="title">Userprofile page</h1>
@@ -30,16 +26,17 @@ function Userprofile(props) {
                 <Link to="/UdateAccount"><button className="updatebutton" >Update Account</button></Link>
                 <Routes><Route exact path="/UdateAccount" element={<UpdateAccount />} /></Routes>
             </div>
-            <div class="card">
-                <div class="content">
-                    <div class="front">
-                        <h3 class="title">{userInfoState.name}</h3>
-                        <p class="subtitle">{userInfoState.email}</p>
+            <div className="mainCard">
+            <div className="card">
+                <div className="content">
+                    <div className="front">
+                        <h3 className="title">{userInfoState.name}</h3>
+                        <p className="subtitle"> Email: {userInfoState.email}</p>
                     </div>
 
-                    <div class="back">
-                        <p class="description">
-                            Userprofile Info Here
+                    <div className="back">
+                        <p className="description">
+                            {/* <b>Userprofile Info Here</b> */}
                             <br></br>
                             Desired Weight: {userInfoState.desiredWeight}
                             <br></br>
@@ -54,7 +51,8 @@ function Userprofile(props) {
                     </div>
                 </div>
             </div>
-            <div className="deletebutton">
+            </div>
+            <div className="deletebutton" >
                 <Deleteuser />
             </div>
         </div>

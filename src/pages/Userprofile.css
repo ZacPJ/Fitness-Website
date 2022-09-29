@@ -1,68 +1,59 @@
-.updatebutton {}
+.updatebutton {
+    margin-left: 22px;
+}
 
 .deletebutton {
     position: absolute;
     right: 0;
     bottom: 0;
+    margin-right: 20px;
 }
 
 /* ####################### BUTTONS ^^ ########################## */
 
-/* From uiverse.io by @JoseIsra */
-.card {
-    cursor: pointer;
+.front{
+    text-align: center;
+    background-color: #607D8B;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.back{
+    text-align: center;
+    display: flex;
+    background-color: #607D8B;
+    width: auto;
+    height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.card{
+    text-align: center;
     display: flex;
     width: fit-content;
+    height: 380px;
     justify-content: center;
-    margin-left: 50%;
-    margin-right: 50%;
-    margin-top: 7%;
-    height: 20em;
+    padding: 30px;
+    padding-top: 0px;
+    margin-top: 15px;
+    background-color: #465861;
+    border-radius: 15px;
+    font-size: 25px;
+    /* overflow-y: scroll; */
+    /* scrollbar-width: none; */
 }
 
-.content {
-    text-align: center;
-    position: relative;
-    transition: all 2.25s;
-    background-color: rgb(127, 204, 240);
-    padding: 5em;
-    transform-style: preserve-3d;
+.mainCard{
+    display: flex;
+    justify-content: center;
+    width: auto;
 }
 
-.card:hover .content {
-    transform: rotateY(0.5turn);
-}
 
-.front,
-.back {
-    position: absolute;
-    width: fit-content;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding: 2em;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-}
-
-.title {
-    transform: translateZ(5rem);
-    font-size: 2rem;
-}
-
-.subtitle {
-    transform: translateZ(2rem);
-    text-align: center;
-}
-
-.back {
-    transform: rotateY(0.5turn);
-    background-color: #009bff;
-}
-
-.description {
-    transform: translateZ(3rem);
-}
 
 /* ####################### PROFILE INFO CARD ^^ ######################################### */
