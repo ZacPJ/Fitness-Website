@@ -9,6 +9,7 @@
 .innerFlex{
     display: flex;
     height: auto;
+    justify-content: center;
 }
 .innerDiv{
     padding: 50px;
