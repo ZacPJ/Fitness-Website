@@ -66,7 +66,7 @@ function Home(props) {
                             <div className="form">
                                 <Login setter={setUserEmail} />
 
-                                <Link style={{ border: "solid yellow" }} to="/SignUp">Create an account</Link>
+                                <Link style={{  color: "#000"}} to="/SignUp">Create an account</Link>
                                 <Routes style={{ border: "solid 5px red" }}><Route exact path="/SignUp" element={<SignUp />} /></Routes>
 
 
@@ -74,7 +74,7 @@ function Home(props) {
                         </div>
                         :
                         <div>
-                            successfully signed in with the email {userEmail}, this message can be removed later
+                            <h1 classname="title"> Welcome, {props.usersInfo.name} </h1>
 
                             <br></br>
                             <button onClick={() => logOut()}>sign out</button>
