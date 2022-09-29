@@ -3,6 +3,7 @@ import { removeUser } from "../utils";
 import { findUser } from "../utils";
 import { getCookie } from "../common";
 import { useNavigate } from "react-router-dom"
+import { reloadOnDelete } from "../Home"
 
 
 const Deleteuser = () => {
@@ -20,16 +21,27 @@ const Deleteuser = () => {
         }
     }
 
-    async function submitHandler(event) {
+    async function submitHandler(event, option) {
         event.preventDefault();
-        let path = "/"
-        searchUser()
-        navigate(path)
+        if (option === true) {
+            let path = "/"
+            await searchUser()
+            navigate(path)
+            reloadOnDelete()
+        }
     }
 
     return (
-        <form onSubmit={submitHandler} >
-            <button type="submit" className="deleteUserButton"> Delete Account </button>
+        <form onSubmit={(event) => {
+            if (window.confirm('Are you sure you wish to delete your account (This cannot be undone)')) {
+                submitHandler(event, true)
+            } else {
+                submitHandler(event, false)
+            }
+        }}
+
+        >
+            <button type="submit" className="deleteUserButton" > Delete Account </button>
         </form>
     )
 }
