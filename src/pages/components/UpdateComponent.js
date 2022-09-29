@@ -8,6 +8,10 @@ const UpdateUserInfo = (props) => {
         usersInfo = await props.userInfo
         setProps(true)
     }
+async function ReturnToProfile(){
+    await navigate("/Userprofile")
+    window.location.reload(false);
+}
     setVars(props)
     const [currentWeight, setCurrentWeight] = useState();
     const [name, setName] = useState();
@@ -28,7 +32,7 @@ const UpdateUserInfo = (props) => {
 
         await navigate("/Userprofile")
         window.location.reload(false);
-    }
+    }  
 
     return (
         <div>
@@ -81,6 +85,7 @@ const UpdateUserInfo = (props) => {
             <button type="submit" className="updateButton"> Update </button>
 
         </form>
+        <button onClick = {ReturnToProfile}>Back</button>
         </div>
     )
 }
