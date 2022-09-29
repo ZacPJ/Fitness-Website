@@ -7,7 +7,7 @@ import SignUp from './SignUp';
 import HomeStyles from './Home.css';
 import { getCookie } from "./common/index.js";
 import { findUser } from "./utils/index.js";
-export async function reloadOnDelete(){
+export async function reloadOnDelete() {
     let name = 'jwt_token'
     document.cookie = await name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     window.location.reload(false);
@@ -66,7 +66,7 @@ function Home(props) {
                             <div className="form">
                                 <Login setter={setUserEmail} />
 
-                                <Link style={{  color: "#000"}} to="/SignUp">Create an account</Link>
+                                <Link style={{ textUnderlineOffset: "8px", fontWeight: "700", textTransform: "uppercase", color: "#000", marginBottom: "20px", padding: "10px 0" }} to="/SignUp">Not Registered? Create an account</Link>
                                 <Routes><Route exact path="/SignUp" element={<SignUp />} /></Routes>
 
 
