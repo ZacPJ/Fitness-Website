@@ -1,10 +1,5 @@
 /* Initial styling done, will proceed on branch enhancement/home_style_hk */
 
-
-body {
-    background-color: #FFF;
-}
-
 #nav-white {
     display: flex;
     justify-content: space-between;
@@ -53,4 +48,24 @@ body {
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
+}
+
+.loginButton {
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #000;
+    padding: 20px;
+    margin: 20px 0;
+    width: 10em;
+    text-transform: uppercase;
+    font-family: "tesla";
+    font-size: 25px;
+    transition: all .2s ease-in-out;
+    
+}
+
+.loginButton:hover {
+    text-shadow: 0 0 5px #FFF;
 }
