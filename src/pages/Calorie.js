@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { listUserCals } from "./utils"
 let usersInfo = []
 let allUsers = []
-let pageLoad = 0
 async function setVars(props) {
     usersInfo = await props.usersInfo
     await props.setIsNav(true)
@@ -17,9 +16,9 @@ function Calorie(props) {
     async function getUsers() {
         allUsers = await listUserCals()
         allUsers = await allUsers.sort((a, b) => b.calories - a.calories)
-        if (pageLoad === 0) {
             setAllUsersState(allUsers)
-        }
+            setUserInfoVar(usersInfo)
+
     }
     const [userInfoState, setUserInfoVar] = useState([])
     const [allUsersState, setAllUsersState] = useState([])
@@ -27,8 +26,7 @@ function Calorie(props) {
     console.log(props.usersInfo)
     useEffect(() => {
 
-        setUserInfoVar(usersInfo)
-        setAllUsersState(allUsers)
+
         props.setIsNav(true)
     }, [userInfoState])
     getUsers()
@@ -46,7 +44,6 @@ function Calorie(props) {
                             {allUsersState.map((arrayVar, index) => {
                                 let isEven = true
                                 let isYou = false
-                                pageLoad = 1
                                 let suffix = ""
                                 let indexUnit = ""
                                 const numArray = ["11","12","13"]

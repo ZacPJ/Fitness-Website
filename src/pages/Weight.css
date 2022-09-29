@@ -118,7 +118,8 @@
 }
 .chosenDescriptionFlexBox {
     display: flex;
-    height: 150px;
+    max-height: 250px;
+    height: fit-content;
     width: auto;
     padding: 10px;
     align-items: center;
