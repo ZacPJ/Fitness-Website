@@ -5,16 +5,18 @@ import { Route, Routes, Link } from "react-router-dom";
 import UpdateAccount from './UpdateAccount';
 import Deleteuser from "./components/Deleteuser";
 let userInfo = []
-async function setVars(props) {
-    userInfo = await props.usersInfo
-    await props.setIsNav(true)
-}
+
 
 
 function Userprofile(props) {
+    async function setVars(props) {
+        userInfo = await props.usersInfo
+        await props.setIsNav(true)
+        setUserInfoVar(userInfo)
+    }
     const [userInfoState, setUserInfoVar] = useState([])
     useEffect(() => {
-        setUserInfoVar(userInfo)
+
         props.setIsNav(true)
     }, [userInfoState])
     setVars(props)
