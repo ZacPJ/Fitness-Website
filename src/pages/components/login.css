@@ -2,12 +2,15 @@
     text-transform: uppercase;
     font-weight: 600;
     margin: 15px;
+    width: 100%;
 }
 
 .formFields {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: solid black;
+    align-items: center;
 }
 
 input {
@@ -25,10 +28,10 @@ input:focus {
  }
 
 .loginButton {
-    height: 2em;
-    margin: 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     background-color: #000;
+    padding: 20px;
+    width: 50%;
 }
