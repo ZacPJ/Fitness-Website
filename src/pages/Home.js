@@ -75,9 +75,10 @@ function Home(props) {
                         :
                         <div>
                             <h1 classname="title"> Welcome, {props.usersInfo.name} </h1>
-
                             <br></br>
-                            <button onClick={() => logOut()}>sign out</button>
+                            <p className="title">Our Weight Calculator will let you choose an exercise and figure out how many calories you have burned.</p>
+                            <p className="title">Check out our leaderboard to see how your exercising compares to other people's.</p>
+                            <button onClick={() => logOut()}>Sign Out</button>
                         </div>
                 }
 
