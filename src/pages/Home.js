@@ -77,7 +77,7 @@ function Home(props) {
                             <h1 classname="title"> Welcome, {props.usersInfo.name} </h1>
 
                             <br></br>
-                            <button onClick={() => logOut()}>sign out</button>
+                            <button className="loginButton" onClick={() => logOut()}>sign out</button>
                         </div>
                 }
 
