@@ -28,7 +28,7 @@ export const login = async(email,password,setter) =>{
 }
 
 
-export const update = async(email, name, desiredWeight, sex, height, age, calories) =>{
+export const update = async(email, name, desiredWeight, sex, height, age, calories,currentWeight) =>{
     try
     {
         console.log("updatecalled")
