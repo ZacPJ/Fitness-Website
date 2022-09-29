@@ -16,6 +16,7 @@ body {
     margin-bottom: 70px;
     box-shadow: 0 0 38px 40px #FFF;
     background-color: #FFF;
+    margin-left: -70px;
 }
 
 .wrapper {

@@ -14,7 +14,7 @@
 body {
   background-color: #DEE6E9;
   cursor: default;
-  min-height: 200vh;
+  min-height: 100vh;
   font-family: 'Exo 2', sans-serif;
 }
 button{
