@@ -1,6 +1,5 @@
 
 import { React, useState, useEffect } from "react";
-import { act } from "react-dom/test-utils";
 import '../pages/Weight.css';
 import { calorieCount } from "./components/api_main"
 import { update } from "./utils";
