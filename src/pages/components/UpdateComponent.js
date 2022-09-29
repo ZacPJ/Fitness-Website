@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { update } from "../utils";
-import { useNavigate } from "react-router-dom"
-import './updateComponent.css'
+import { useNavigate } from "react-router-dom";
+import './updateComponent.css';
+
 let usersInfo = []
 const UpdateUserInfo = (props) => {
     async function setVars(props) {
@@ -79,12 +80,14 @@ const UpdateUserInfo = (props) => {
                         <br></br>
                         <input onChange={(event) => setAge(event.target.value)} />
                     </label>
-                </div>
 
-                <button type="submit" className="updateButton"> Update </button>
+                    <button type="submit" className="loginButton"> Update </button>
+
+                </div>
+                <button onClick={ReturnToProfile}><span className="left" style={{}}></span></button>
+
 
             </form>
-            <button onClick={ReturnToProfile}>Back To Profile</button>
         </div>
     )
 }
