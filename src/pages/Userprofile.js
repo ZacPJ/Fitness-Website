@@ -40,6 +40,8 @@ function Userprofile(props) {
                         <p className="description">
                             {/* <b>Userprofile Info Here</b> */}
                             <br></br>
+                            Current Weight: {userInfoState.currentWeight}
+                            <br></br>
                             Desired Weight: {userInfoState.desiredWeight}
                             <br></br>
                             Sex: {userInfoState.sex}
@@ -48,7 +50,7 @@ function Userprofile(props) {
                             <br></br>
                             Age: {userInfoState.age}
                             <br></br>
-                            calories: {userInfoState.calories}
+                            All Time Calories Burned: {userInfoState.calories}
                         </p>
                     </div>
                 </div>

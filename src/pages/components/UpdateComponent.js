@@ -9,7 +9,7 @@ const UpdateUserInfo = (props) => {
         setProps(true)
     }
     setVars(props)
-    const [email, setEmail] = useState();
+    const [currentWeight, setCurrentWeight] = useState();
     const [name, setName] = useState();
     const [desiredWeight, setDesiredWieght] = useState();
     const [sex, setSex] = useState();
@@ -24,7 +24,7 @@ const UpdateUserInfo = (props) => {
     const navigate = useNavigate()
     async function submitHandler(event) {
         event.preventDefault();
-        await update(usersInfo.email, name, desiredWeight, sex, height, age, usersInfo.calories, usersInfo.currentWeight);
+        await update(usersInfo.email, name, desiredWeight, sex, height, age, usersInfo.calories, currentWeight);
 
         await navigate("/Userprofile")
         window.location.reload(false);
@@ -32,7 +32,6 @@ const UpdateUserInfo = (props) => {
 
     return (
         <div>
-       
         <form onSubmit={submitHandler} className="userForm">
 
             <div className="formFields">
@@ -41,6 +40,11 @@ const UpdateUserInfo = (props) => {
                 <label >
                     Name
                     <input defaultValue={usersInfo.name} onChange={(event) => setName(event.target.value)} />
+                </label>
+                <br></br>
+                <label >
+                    Current Weight(Kg)
+                    <input onChange={(event) => setCurrentWeight(event.target.value)} />
                 </label>
                 <br></br>
 
