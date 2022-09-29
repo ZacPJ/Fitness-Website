@@ -38,7 +38,7 @@ const UpdateUserInfo = (props) => {
 
                 <label >
                     Name
-                    <input value={usersInfo.name} onChange={(event) => setName(event.target.value)} />
+                    <input defaultValue={usersInfo.name} onChange={(event) => setName(event.target.value)} />
                 </label>
                 <br></br>
 
