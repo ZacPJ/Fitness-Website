@@ -43,7 +43,7 @@ function Weight(props) {
         updateCalories(chosenObj.caloriesBurned)
 
         await props.pullInfo(usersInfo)
-        //document.getElementById("currentWeight").style
+        document.getElementById("currentWeight").style.textContent(10)
 
 
 

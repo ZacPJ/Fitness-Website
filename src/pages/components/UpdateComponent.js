@@ -25,7 +25,8 @@ const UpdateUserInfo = (props) => {
     async function submitHandler(event) {
         event.preventDefault();
         await update(usersInfo.email, name, desiredWeight, sex, height, age, usersInfo.calories);
-        navigate("/Userprofile")
+        await navigate("/Userprofile")
+        window.location.reload(false);
     }
 
     return (
