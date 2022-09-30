@@ -1,19 +1,22 @@
-.mainFlex{
-display: flex;
-flex-direction: column;
-align-items: center;
-height: auto;
-justify-content: center;
-margin-top:100px;
+.mainFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+    margin-top: 100px;
 }
-.innerFlex{
-display: flex;
-height: auto;
+
+.innerFlex {
+    display: flex;
+    height: auto;
 }
-.innerFlex1{
+
+.innerFlex1 {
     padding: 25px;
     border-style: solid;
     border-width: 4px;
     padding-left: 120px;
-    padding-right:120px;;
+    padding-right: 120px;
+    ;
 }

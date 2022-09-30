@@ -15,7 +15,6 @@ const Deleteuser = () => {
         let cookie = getCookie("jwt_token")
         if (cookie !== false) {
             const user = await findUser(cookie)
-            console.log(user.email, user.password)
             await removeUser(user.email, user.password);
             // call home page here
         }

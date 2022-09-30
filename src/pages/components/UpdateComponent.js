@@ -85,7 +85,7 @@ const UpdateUserInfo = (props) => {
                 <button type="submit" className="updateButton"> Update </button>
 
             </form>
-            <button class = "backArrowButtonUpdate" onClick={ReturnToProfile}><span class = "backArrowUpdate"></span></button>
+            <button class="backArrowButtonUpdate" onClick={ReturnToProfile}><span class="backArrowUpdate"></span></button>
         </div>
     )
 }

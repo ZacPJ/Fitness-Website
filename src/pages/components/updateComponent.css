@@ -1,4 +1,4 @@
-.backArrowUpdate{
+.backArrowUpdate {
     border: solid black;
     border-width: 0 8px 8px 0;
     display: inline-block;
@@ -6,7 +6,8 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
-.backArrowButtonUpdate{
+
+.backArrowButtonUpdate {
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 5px;

@@ -12,34 +12,34 @@ import Home from './Home';
 function SignUpFunc() {
     const navigate = useNavigate()
     const [user, setUser] = useState();
-    async function goHome(){
+    async function goHome() {
         await navigate("/")
         await window.location.reload(false);
     }
     return (
-        <div className = "mainFlex">
-            <div className = "innerDiv">
-            <div className="innerFlex">
-
-                
-            <h1>Sign Up</h1>
-
-            </div>
-            <div className="innerFlex">
-            {!user ?
-                <div>
-                    <SignUp setter={setUser} />
-                    <button className = "backArrowButton" onClick={goHome}><span className = "backArrow"></span></button>
-                </div> :
-                <div>
-                    account created, return to <Link to="/">home page</Link> to log in
+        <div className="mainFlex">
+            <div className="innerDiv">
+                <div className="innerFlex">
 
 
-                    <Routes><Route exact path="/Home" element={<Home />} /></Routes>
+                    <h1>Sign Up</h1>
+
                 </div>
-            }
+                <div className="innerFlex">
+                    {!user ?
+                        <div>
+                            <SignUp setter={setUser} />
+                            <button className="backArrowButton" onClick={goHome}><span className="backArrow"></span></button>
+                        </div> :
+                        <div>
+                            account created, return to <Link to="/">home page</Link> to log in
+
+
+                            <Routes><Route exact path="/Home" element={<Home />} /></Routes>
+                        </div>
+                    }
+                </div>
             </div>
-        </div>
         </div>
     )
 }

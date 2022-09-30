@@ -26,7 +26,6 @@ function Weight(props) {
     useEffect(() => {
         setExercise(listArray)
     }, [listExercise])
-    console.log(`Weight name ${props.usersInfo.name}`)
     setVars(props)
     async function Submit(event) {
         //event.preventDefault()
@@ -45,19 +44,17 @@ function Weight(props) {
         }
         listArray.push(chosenObj)
         setExercise(...listArray, event)
-        console.log(chosenExercise, timeExercised, chosenObj, listArray)
         updateCalories(chosenObj.caloriesBurned)
 
         await props.pullInfo(usersInfo)
         props.usersInfo.currentWeight = props.usersInfo.currentWeight - Math.round(grabCalories / 3500)
         actualWeight = await actualWeight - grabCalories / 3500
-        console.log(actualWeight)
         if (String(props.usersInfo.currentWeight < String(actualWeight).slice(0, 1))) {
             props.usersInfo.currentWeight = await Math.ceil(actualWeight)
         }
         usersInfo = await props.usersInfo.currentWeight
         initialiseTest = 1
-        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories),(props.usersInfo.currentWeight))
+        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories), (props.usersInfo.currentWeight))
 
     }
     function exerciseDesc() {
@@ -66,13 +63,12 @@ function Weight(props) {
         chosenDesc = filteredExercise[0].description
         chosenDesc = chosenDesc.replaceAll("<p>", "").replaceAll("</p>", "")
         document.getElementById("chosenDescription").textContent = chosenDesc
-        console.log(chosenDesc)
         setExercise(listArray)
     }
     async function updateCalories(calories) {
         calories = Math.round(calories)
         usersInfo.calories = calories + usersInfo.calories
-        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories),(usersInfo.currentWeight))
+        await update(usersInfo.email, usersInfo.name, usersInfo.desiredWeight, usersInfo.sex, usersInfo.height, usersInfo.age, (usersInfo.calories), (usersInfo.currentWeight))
     }
 
 

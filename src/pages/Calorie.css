@@ -1,4 +1,4 @@
-.leaderBoardInfoFlex{
+.leaderBoardInfoFlex {
     display: flex;
     width: fit-content;
     height: 500px;
@@ -12,10 +12,12 @@
     overflow-y: scroll;
     scrollbar-width: none;
 }
-.title{
+
+.title {
     padding: 25px;
 }
-.leaderBoardInfo{
+
+.leaderBoardInfo {
     display: flex;
     background-color: #607D8B;
     width: auto;
@@ -24,7 +26,8 @@
     list-style: none;
     border-radius: 15px;
 }
-.leaderBoardInfoEven{
+
+.leaderBoardInfoEven {
     background-color: #7ea0b1;
     display: flex;
     width: auto;
@@ -33,7 +36,8 @@
     list-style: none;
     border-radius: 15px;
 }
-.leaderBoardInfoYou{
+
+.leaderBoardInfoYou {
     background-color: #a3e9ce;
     display: flex;
     width: auto;
@@ -42,18 +46,20 @@
     list-style: none;
     border-radius: 15px;
 }
-.position{
+
+.position {
     display: flex;
     padding-right: 15px;
     background-color: inherit;
     align-self: left;
-    
+
 }
-.primaryLeaderBoardFlex{
-display: flex;
-margin: 100px;
-flex-direction: column;
-align-items: center;
-width: auto;
-font-size: 40px;
+
+.primaryLeaderBoardFlex {
+    display: flex;
+    margin: 100px;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    font-size: 40px;
 }

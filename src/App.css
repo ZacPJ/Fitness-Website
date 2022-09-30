@@ -17,7 +17,8 @@ body {
   min-height: 100vh;
   font-family: 'Exo 2', sans-serif;
 }
-button{
+
+button {
   border-radius: 25px;
   padding: 5px;
   width: fit-content;
@@ -26,12 +27,14 @@ button{
   background-color: #607D8B;
   color: white;
 }
-select{
-max-width: 200px;
-width: fit-content;
-font-size: inherit;
-margin-left: 10px;
+
+select {
+  max-width: 200px;
+  width: fit-content;
+  font-size: inherit;
+  margin-left: 10px;
 }
+
 .nav-link {
   text-decoration: none;
   padding: 7px 16px;

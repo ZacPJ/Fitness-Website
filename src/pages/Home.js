@@ -23,7 +23,6 @@ function Home(props) {
     useEffect(() => {
 
         let cookie = getCookie("jwt_token");
-        console.log(cookie);
         if (cookie !== false) {
             loginWithToken(cookie);
         }
@@ -33,7 +32,6 @@ function Home(props) {
     async function loginWithToken(cookie) {
         const cookieUser = await findUser(cookie);
         setUserEmail(cookieUser.email);
-        console.log("signed in with cookies");
         props.setIsNav(true)
     }
 
