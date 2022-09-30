@@ -117,6 +117,8 @@ select {
     font-size: 25px;
     height: fit-content;
     border-radius: 25px;
+    background-color: #607D8B;
+    border-width: 0px;
 }
 
 .chosenDescriptionFlex {
