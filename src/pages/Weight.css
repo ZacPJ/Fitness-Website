@@ -18,6 +18,7 @@
     width: auto;
 
 }
+
 .descSecondaryFlex {
     display: flex;
     width: fit-content;
@@ -44,9 +45,11 @@
     border-radius: 15px;
 
 }
-.groupDescFlex{
+
+.groupDescFlex {
     height: fit-content;
 }
+
 .innerDescFlex {
     display: flex;
     width: fit-content;
@@ -59,7 +62,7 @@
     width: 50%;
     height: auto;
     background-color: #465861;
-    margin-left:10px;
+    margin-left: 10px;
     margin-right: 10px;
     color: aliceblue;
     justify-content: space-around;
@@ -67,11 +70,12 @@
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
 }
+
 .innerWeightFlexLower {
     display: flex;
     width: 50%;
     height: auto;
-    margin-left:10px;
+    margin-left: 10px;
     margin-right: 10px;
     background-color: #607D8B;
     color: aliceblue;
@@ -81,22 +85,27 @@
     border-bottom-left-radius: 10px;
     margin-bottom: 10px;
 }
-select{
+
+select {
     max-width: fit-content;
 }
+
 .dropdown {
     display: inline-block;
     position: relative;
     width: fit-content;
-    
+
 }
-.dropDownContent{
-    background-color:#465861;
+
+.dropDownContent {
+    background-color: #465861;
     margin: 2px;
 }
-.dropDownContent:hover{
+
+.dropDownContent:hover {
     background-color: pink;
 }
+
 .buttonExercise {
     width: fit-content;
     vertical-align: middle;
@@ -116,6 +125,7 @@ select{
     max-width: 500px;
     padding: 10px;
 }
+
 .chosenDescriptionFlexBox {
     display: flex;
     max-height: 250px;

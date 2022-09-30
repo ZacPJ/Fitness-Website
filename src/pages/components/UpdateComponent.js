@@ -88,6 +88,7 @@ const UpdateUserInfo = (props) => {
 
             </form>
 
+
             <button class = "backArrowButtonUpdate" onClick={ReturnToProfile}><span class = "backArrowUpdate"></span></button>
 
         </div>

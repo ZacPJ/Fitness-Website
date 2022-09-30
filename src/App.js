@@ -23,12 +23,9 @@ function App() {
   const [isNav, setIsNav] = useState(false)
   async function pull_userInfo(data) {
     await setUserInfo(data)
-    console.log(`This is data sent fromt the child`)
-    console.log(data)
   }
   useEffect(() => {
     let cookie = getCookie("jwt_token");
-    console.log(cookie);
     if (cookie !== false) {
       loginWithToken(cookie);
     }
@@ -38,10 +35,8 @@ function App() {
   async function loginWithToken(cookie) {
     const cookieUser = await findUserInfo(cookie);
     setUserInfo(cookieUser);
-    console.log("signed in with cookies on app.js");
   }
-  console.log(storedExercise)
-  console.log(`User test ${userInfo.name}`)
+
 
 
 
@@ -53,11 +48,11 @@ function App() {
       {isNav ? <Nav /> : null}
       <div className="wrapper">
         <Routes>
-          <Route exact path="/" element={<Home setIsNav={setIsNav} isNav={isNav} usersInfo={userInfo}/>} />
+          <Route exact path="/" element={<Home setIsNav={setIsNav} isNav={isNav} usersInfo={userInfo} />} />
           <Route exact path="/Weight" element={<Weight isNav={isNav} setIsNav={setIsNav} exercise={storedExercise} usersInfo={userInfo} pullInfo={pull_userInfo} />} />
           <Route exact path="/Calorie" element={<Calorie usersInfo={userInfo} isNav={isNav} setIsNav={setIsNav} />} />
           <Route exact path="/Userprofile" element={<Userprofile usersInfo={userInfo} setIsNav={setIsNav} />} />
-          <Route exact path="/UdateAccount" element={<UpdateAccount usersInfo={userInfo} isNav={isNav} setIsNav={setIsNav}/>} />
+          <Route exact path="/UdateAccount" element={<UpdateAccount usersInfo={userInfo} isNav={isNav} setIsNav={setIsNav} />} />
           <Route exact path="/SignUp" element={<SignUp />} />
         </Routes>
       </div>

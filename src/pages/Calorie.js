@@ -16,27 +16,24 @@ function Calorie(props) {
     async function getUsers() {
         allUsers = await listUserCals()
         allUsers = await allUsers.sort((a, b) => b.calories - a.calories)
-            setAllUsersState(allUsers)
-            setUserInfoVar(usersInfo)
+        setAllUsersState(allUsers)
+        setUserInfoVar(usersInfo)
 
     }
     const [userInfoState, setUserInfoVar] = useState([])
     const [allUsersState, setAllUsersState] = useState([])
     setVars(props)
-    console.log(props.usersInfo)
     useEffect(() => {
 
 
         props.setIsNav(true)
     }, [userInfoState])
     getUsers()
-
-    console.log("BREAK")
     return (
         <div>
             <h1 className="title">Your Total Calories Burned: {userInfoState.calories}</h1>
 
-            <div className = "primaryLeaderBoardFlex">
+            <div className="primaryLeaderBoardFlex">
                 <h1>Top Calories Burned</h1>
                 <div className="leaderBoardInfoFlex">
                     {allUsersState?.length > 0 ? (
@@ -46,43 +43,41 @@ function Calorie(props) {
                                 let isYou = false
                                 let suffix = ""
                                 let indexUnit = ""
-                                const numArray = ["11","12","13"]
+                                const numArray = ["11", "12", "13"]
                                 indexUnit = String(index + 1).slice(-1, 2)
-                                console.log(indexUnit)
 
-                                if (indexUnit in numArray){
+                                if (indexUnit in numArray) {
                                     suffix = "th"
-                                }else{
-                                indexUnit = String(index + 1).slice(-1)
-                                switch (indexUnit) {
-                                    case "1":
-                                        suffix = "st"
-                                        break
-                                    case "2":
-                                        suffix = "nd"
-                                        break
-                                    case "3":
-                                        suffix = "rd"
-                                        break
-                                    default:
-                                        suffix = "th"
-                                        break
+                                } else {
+                                    indexUnit = String(index + 1).slice(-1)
+                                    switch (indexUnit) {
+                                        case "1":
+                                            suffix = "st"
+                                            break
+                                        case "2":
+                                            suffix = "nd"
+                                            break
+                                        case "3":
+                                            suffix = "rd"
+                                            break
+                                        default:
+                                            suffix = "th"
+                                            break
+                                    }
                                 }
-                                }
-                                if((index+1)%2 === 0){
-                                    console.log(`index is even`)
+                                if ((index + 1) % 2 === 0) {
                                     isEven = true
-                                }else{
+                                } else {
                                     isEven = false
                                 }
-                                if (arrayVar.name === userInfoState.name && arrayVar.calories === userInfoState.calories){
+                                if (arrayVar.name === userInfoState.name && arrayVar.calories === userInfoState.calories) {
                                     isYou = true
                                 }
                                 return (
                                     <div key={index}>
                                         <div>
-                                            <div className = {isYou ? 'leaderBoardInfoYou' : isEven ? 'leaderBoardInfoEven' : 'leaderBoardInfo'}>
-                                                <li className = "position">{index + 1}{suffix}   </li>
+                                            <div className={isYou ? 'leaderBoardInfoYou' : isEven ? 'leaderBoardInfoEven' : 'leaderBoardInfo'}>
+                                                <li className="position">{index + 1}{suffix}   </li>
                                                 <li>   {arrayVar.name} burned a total of {arrayVar.calories} calories</li>
                                             </div>
                                         </div>
@@ -97,10 +92,10 @@ function Calorie(props) {
                             <h2>~~~Retrieving Leaderboard~~~</h2>
                         </div>
                     )}
-                </div>    
                 </div>
             </div>
-            )
+        </div>
+    )
 }
 
-            export default Calorie;
+export default Calorie;

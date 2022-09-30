@@ -20,11 +20,11 @@ input {
     border: solid 3px #000;
 }
 
-input:focus { 
+input:focus {
     outline: none;
     border-color: #719ECE;
     box-shadow: 0 0 10px #719ECE;
- }
+}
 
 .loginButton {
     border: none;
@@ -39,7 +39,7 @@ input:focus {
     font-family: "tesla";
     font-size: 25px;
     transition: all .2s ease-in-out;
-    
+
 }
 
 .loginButton:hover {

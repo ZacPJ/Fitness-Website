@@ -1,6 +1,7 @@
 .updatebutton {
     margin-left: 22px;
 }
+
 .deletebutton {
     position: absolute;
     right: 0;
@@ -10,7 +11,7 @@
 
 /* ####################### BUTTONS ^^ ########################## */
 
-.front{
+.front {
     text-align: center;
     background-color: #607D8B;
     margin-top: 5px;
@@ -19,7 +20,7 @@
     border-radius: 15px;
 }
 
-.back{
+.back {
     text-align: center;
     display: flex;
     background-color: #7ea0b1;
@@ -31,7 +32,7 @@
     border-radius: 15px;
 }
 
-.card{
+.card {
     text-align: center;
     display: flex;
     width: fit-content;
@@ -47,7 +48,7 @@
     /* scrollbar-width: none; */
 }
 
-.mainCard{
+.mainCard {
     display: flex;
     justify-content: center;
     width: auto;
