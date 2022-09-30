@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { update } from "../utils";
-import { useNavigate } from "react-router-dom"
-import "./updateComponent.css"
+import { useNavigate } from "react-router-dom";
+import './updateComponent.css';
+
 
 let usersInfo = []
 const UpdateUserInfo = (props) => {
@@ -80,12 +81,16 @@ const UpdateUserInfo = (props) => {
                         <br></br>
                         <input onChange={(event) => setAge(event.target.value)} />
                     </label>
+
+                    <button type="submit" className="loginButton"> Update </button>
+
                 </div>
 
-                <button type="submit" className="updateButton"> Update </button>
-
             </form>
-            <button class="backArrowButtonUpdate" onClick={ReturnToProfile}><span class="backArrowUpdate"></span></button>
+
+
+            <button class = "backArrowButtonUpdate" onClick={ReturnToProfile}><span class = "backArrowUpdate"></span></button>
+
         </div>
     )
 }
