@@ -4,7 +4,7 @@ import { writeCookie } from "../common";
 
 export const login = async (email, password, setter) => {
     try {
-        const response = await fetch("http://localhost:5000/user/login", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}user/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -27,7 +27,7 @@ export const login = async (email, password, setter) => {
 
 export const update = async (email, name, desiredWeight, sex, height, age, calories, currentWeight) => {
     try {
-        const response = await fetch("http://localhost:5000/user/updateUserInfo", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}user/updateUserInfo`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -52,7 +52,7 @@ export const update = async (email, name, desiredWeight, sex, height, age, calor
 
 export const signUp = async (name, email, password, currentWeight, desiredWeight, age, height, sex, setter) => {
     try {
-        const response = await fetch("http://localhost:5000/user/signup", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}user/signup`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -80,7 +80,7 @@ export const signUp = async (name, email, password, currentWeight, desiredWeight
 
 export const findUser = async (token) => {
     try {
-        const response = await fetch("http://localhost:5000/user/findUser", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}user/findUser`, {
             method: "GET",
             headers:
             {
@@ -98,7 +98,7 @@ export const findUser = async (token) => {
 }
 export const findUserInfo = async (token) => {
     try {
-        const response = await fetch("http://localhost:5000/user/findUserInfo", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}user/findUserInfo`, {
             method: "GET",
             headers:
             {
@@ -119,7 +119,7 @@ export const findUserInfo = async (token) => {
 export const removeUser = async (email, password) => {
     try {
         console.log("deletecalled")
-        const response = await fetch("http://localhost:5000/user/remove", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}user/remove`, {
             method: "POST",
             headers:
             {
@@ -141,7 +141,7 @@ export const removeUser = async (email, password) => {
 
 export const listUserCals = async () => {
     try {
-        const response = await fetch("http://localhost:5000/user/listUsersCals", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}user/listUsersCals`, {
             method: "GET",
             headers:
             {
