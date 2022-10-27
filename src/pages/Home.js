@@ -16,9 +16,6 @@ function Home(props) {
 
     const [userEmail, setUserEmail] = useState();
 
-    useEffect(() => {
-        props.setIsNav(false)
-    })
 
     useEffect(() => {
 
