@@ -34,7 +34,6 @@ const UpdateUserInfo = (props) => {
         await navigate("/Userprofile")
         window.location.reload(false);
     }
-
     return (
         <div>
             <form onSubmit={submitHandler} className="userForm">
@@ -91,6 +90,7 @@ const UpdateUserInfo = (props) => {
 
         </div>
     )
+    
 }
 
 
