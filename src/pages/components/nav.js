@@ -9,8 +9,8 @@ function Navbar() {
         if (bool === true){
         let name = 'jwt_token'
         document.cookie = await name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        window.location.reload(false);
         await navigate("/*")
+        window.location.reload(false);
         }
     }
     return (
