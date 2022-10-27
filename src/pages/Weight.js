@@ -14,9 +14,15 @@ async function setVars(propsInner) {
     await propsInner.setIsNav(true)
     exercise = await propsInner.exercise
     usersInfo = await propsInner.usersInfo
+    let chosenExercise = ""
+    chosenExercise = document.getElementById("exerciseChoose").value.slice(0, -1)
+    if (await chosenDesc === "" && await chosenExercise !== "2 Handed Kettlebell Swing" && await chosenExercise !== ""){
+        chosenDesc = "Sorry. No description was found for this exercise."
+    }
     if (await chosenDesc === ""){
     chosenDesc = await propsInner.exercise[0].description.replace("<p>", "").replace("</p>", "")
     }
+    
 }
 function Weight(props) {
     if (initialiseTest !== 1) {
@@ -61,8 +67,12 @@ function Weight(props) {
         let filteredExercise = exercise.filter(filter => chosenExercise === filter.name)
         chosenDesc = filteredExercise[0].description
         chosenDesc = chosenDesc.replaceAll("<p>", "").replaceAll("</p>", "")
+        if (chosenDesc === ""){
+            chosenDesc = "Sorry. No description was found for this exercise."
+        }
         document.getElementById("chosenDescription").textContent = chosenDesc
         setExercise(listArray)
+
     }
     async function updateCalories(calories) {
         calories = Math.round(calories)
