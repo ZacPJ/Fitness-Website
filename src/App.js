@@ -48,7 +48,7 @@ function App() {
       {isNav ? <Nav /> : null}
       <div className="wrapper">
         <Routes>
-          <Route exact path="/" element={<Home setIsNav={setIsNav} isNav={isNav} usersInfo={userInfo} />} />
+          <Route exact path="*" element={<Home setIsNav={setIsNav} isNav={isNav} usersInfo={userInfo} />} />
           <Route exact path="/Weight" element={<Weight isNav={isNav} setIsNav={setIsNav} exercise={storedExercise} usersInfo={userInfo} pullInfo={pull_userInfo} />} />
           <Route exact path="/Calorie" element={<Calorie usersInfo={userInfo} isNav={isNav} setIsNav={setIsNav} />} />
           <Route exact path="/Userprofile" element={<Userprofile usersInfo={userInfo} setIsNav={setIsNav} />} />
