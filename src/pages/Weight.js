@@ -4,7 +4,7 @@ import '../pages/Weight.css';
 import { calorieCount } from "./components/api_main"
 import { update } from "./utils";
 let exercise = []
-let chosenDesc = []
+let chosenDesc = ""
 let listArray = []
 let usersInfo = []
 let grabCalories = 0
@@ -14,7 +14,9 @@ async function setVars(propsInner) {
     await propsInner.setIsNav(true)
     exercise = await propsInner.exercise
     usersInfo = await propsInner.usersInfo
+    if (await chosenDesc === ""){
     chosenDesc = await propsInner.exercise[0].description.replace("<p>", "").replace("</p>", "")
+    }
 }
 function Weight(props) {
     if (initialiseTest !== 1) {
