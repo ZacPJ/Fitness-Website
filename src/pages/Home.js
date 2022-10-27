@@ -4,7 +4,7 @@ import Login from "./components/Login.js"
 import { Route, Routes, Link } from "react-router-dom";
 import SignUp from './SignUp';
 
-import HomeStyles from './Home.css';
+import './Home.css';
 import { getCookie } from "./common/index.js";
 import { findUser } from "./utils/index.js";
 export async function reloadOnDelete() {
@@ -18,7 +18,7 @@ function Home(props) {
 
     useEffect(() => {
         props.setIsNav(false)
-    }, [])
+    })
 
     useEffect(() => {
 
@@ -27,7 +27,7 @@ function Home(props) {
             loginWithToken(cookie);
         }
 
-    }, [])
+    })
 
     async function loginWithToken(cookie) {
         const cookieUser = await findUser(cookie);
@@ -72,7 +72,7 @@ function Home(props) {
                         </div>
                         :
                         <div>
-                            <h1 classname="title"> Welcome, {props.usersInfo.name} </h1>
+                            <h1 className="title"> Welcome, {props.usersInfo.name} </h1>
                             <br></br>
 
                             <p className="title">Our Weight Calculator will let you choose an exercise and figure out how many calories you have burned.</p>
