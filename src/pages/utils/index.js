@@ -43,7 +43,7 @@ export const update = async (email, name, desiredWeight, sex, height, age, calor
             })
         })
 
-        const data = await response.json();
+        await response.json();
     }
     catch (error) {
         console.log(error);
@@ -131,7 +131,7 @@ export const removeUser = async (email, password) => {
             })
         })
 
-        const data = await response.json();
+        await response.json();
     }
     catch (error) {
         console.log(error);

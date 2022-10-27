@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import '../pages/Calorie.css';
-import { useEffect } from "react";
 import { listUserCals } from "./utils"
 let usersInfo = []
 let allUsers = []
@@ -23,11 +22,6 @@ function Calorie(props) {
     const [userInfoState, setUserInfoVar] = useState([])
     const [allUsersState, setAllUsersState] = useState([])
     setVars(props)
-    useEffect(() => {
-
-
-        props.setIsNav(true)
-    }, [userInfoState])
     getUsers()
     return (
         <div>

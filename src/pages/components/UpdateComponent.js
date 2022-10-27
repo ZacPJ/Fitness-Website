@@ -9,7 +9,6 @@ let usersInfo = []
 const UpdateUserInfo = (props) => {
     async function setVars(props) {
         usersInfo = await props.userInfo
-        setProps(true)
     }
     async function ReturnToProfile() {
         await navigate("/Userprofile")
@@ -22,10 +21,9 @@ const UpdateUserInfo = (props) => {
     const [sex, setSex] = useState();
     const [height, setHeight] = useState();
     const [age, setAge] = useState();
-    const [propTrue, setProps] = useState()
     useEffect(() => {
         setVars(props)
-    }, [])
+    })
     // const [password, setPassword] = useState();
     // email, name, desiredWeight, sex, height, age 
     const navigate = useNavigate()

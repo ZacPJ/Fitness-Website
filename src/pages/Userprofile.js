@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import '../pages/Userprofile.css';
 import { Route, Routes, Link } from "react-router-dom";
 import UpdateAccount from './UpdateAccount';
@@ -15,10 +15,6 @@ function Userprofile(props) {
         setUserInfoVar(userInfo)
     }
     const [userInfoState, setUserInfoVar] = useState([])
-    useEffect(() => {
-
-        props.setIsNav(true)
-    }, [userInfoState])
     setVars(props)
     return (
         <div>

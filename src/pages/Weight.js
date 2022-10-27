@@ -11,24 +11,21 @@ let grabCalories = 0
 let actualWeight = 0
 let initialiseTest = 0
 async function setVars(propsInner) {
+    await propsInner.setIsNav(true)
     exercise = await propsInner.exercise
     usersInfo = await propsInner.usersInfo
     chosenDesc = await propsInner.exercise[0].description.replace("<p>", "").replace("</p>", "")
 }
 function Weight(props) {
-    if (initialiseTest != 1) {
+    if (initialiseTest !== 1) {
         actualWeight = props.usersInfo.currentWeight
     }
     const [listExercise, setExercise] = useState([])
-    useEffect(() => {
-        props.setIsNav(true)
-    }, [])
     useEffect(() => {
         setExercise(listArray)
     }, [listExercise])
     setVars(props)
     async function Submit(event) {
-        //event.preventDefault()
         let chosenExercise = document.getElementById("exerciseChoose").value.slice(0, -1)
         let timeExercised = document.getElementById("time").value
         let filteredExercise = exercise.filter(filter => chosenExercise === filter.name)
