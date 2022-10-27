@@ -16,7 +16,6 @@ const Deleteuser = () => {
         if (cookie !== false) {
             const user = await findUser(cookie)
             await removeUser(user.email, user.password);
-            // call home page here
         }
     }
 
